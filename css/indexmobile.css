@@ -12,16 +12,11 @@
     src: url("../font/Slabo_27px/Slabo27px-Regular.ttf")
 }
 body{
-    background: linear-gradient(#fc9928ad, #ae784e8e, #ae644e80);
-}
-p{
-    color: #ffffff;
-    font-family: arial,sans-serif;
-    text-indent: 10px;
+    background: linear-gradient(#fc9928ad, #ae784e8e, #ae644e6b);
 }
 .interface{
     
-    width: 70%;
+    width: 90%;
     height: 1250px;
     position: relative;
     margin: 0px auto 0px auto;  
@@ -32,43 +27,56 @@ p{
 .img_interface{
     width: 100%;
 }
+
 .topnav {
     background-color: #201C17;
     overflow: hidden;
     margin-top: -5px;
   
   }
-  @media screen and (min-width: 1800px) {
+  @media screen and (min-width: 1180px) and (max-width:1300px) {
   .topnav a {
     float: left;
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 146px;
+    padding: 14px 110px;
     text-decoration: none;
     font-size: 26px;
     transition: 0.5s;
   }
 }
-@media screen and (min-width: 1400px) and (max-width:1799px) {
+  @media screen and (min-width: 900px) and (max-width:1179px) {
     .topnav a {
       float: left;
       display: block;
       color: #f2f2f2;
       text-align: center;
-      padding: 14px 100px;
+      padding: 14px 74px;
       text-decoration: none;
       font-size: 26px;
       transition: 0.5s;
     }
   }
-  @media screen and (min-width: 1280px) and (max-width:1399px) {
+  @media screen and (min-width: 800px) and (max-width:899px) {
     .topnav a {
       float: left;
       display: block;
       color: #f2f2f2;
       text-align: center;
-      padding: 14px 85px;
+      padding: 14px 50px;
+      text-decoration: none;
+      font-size: 26px;
+      transition: 0.5s;
+    }
+  }
+  @media screen and (min-width: 100px) and (max-width:799px) {
+    .topnav a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 10px;
       text-decoration: none;
       font-size: 26px;
       transition: 0.5s;

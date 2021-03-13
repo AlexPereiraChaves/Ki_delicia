@@ -20,14 +20,17 @@ p{
     text-indent: 10px;
 }
 .interface{
-    
     width: 70%;
-    height: 2950px;
+    min-height: 100px;
+    overflow: hidden;
     position: relative;
     margin: 0px auto 0px auto;  
     background-color: #AB7B43;
     border: 1px solid black;
     box-shadow: 2px 2px 30px rgb(255, 255, 255);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+   
 }
 .img_interface{
     width: 100%;
@@ -119,4 +122,20 @@ margin-right: 40px;
 box-shadow: 3px 3px 40px rgb(68, 38, 17);
 margin-left: 40px;
 }
-
+.efeito_foot{
+  width: 95%;
+  background-color: #201C17;
+  margin-left: 20px;
+  border-radius: 10px;
+} 
+.foot{
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.efeito_foot p{
+  visibility: hidden;
+}
+.foot p{ 
+  font-size: 14px;
+  text-align: center;
+}

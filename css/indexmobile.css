@@ -22,7 +22,8 @@ p{
 .interface{
     
     width: 96%;
-    height:  2950px;
+    min-height: 100px;
+    overflow: hidden;
     position: relative;
     margin: 0px auto 0px auto;  
     background-color: #AB7B43;
@@ -85,13 +86,21 @@ p{
 .esquerda img{
     margin-left: 20px;
     margin-bottom: 20px;
-    transition: 0.5s;
+   
 }
-.esquerda :hover{
-width: 103%;
-margin-right: 40px;
-box-shadow: 3px 3px 40px rgb(68, 38, 17);
-margin-left: 40px;
+.efeito_foot{
+  width: 95%;
+  background-color: #201C17;
+  margin-left: 20px;
+}
+.efeito_foot p{
+  visibility: hidden;
+  font-size: 12px;
+  text-align: center;
+}
+.foot p{ 
+  font-size: 14px;
+  text-align: center;
 }
 
 

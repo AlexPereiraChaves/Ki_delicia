@@ -14,15 +14,20 @@
 body{
     background: linear-gradient(#fc9928ad, #ae784e8e, #ae644e6b);
 }
+p{
+  color: #ffffff;
+  font-family: arial,sans-serif;
+  text-indent: 10px;
+}
 .interface{
     
-    width: 90%;
-    height: 1250px;
+    width: 96%;
+    height:  2950px;
     position: relative;
     margin: 0px auto 0px auto;  
     background-color: #AB7B43;
     border: 1px solid black;
-    box-shadow: 2px 2px 10px black;
+    box-shadow: 2px 2px 30px rgb(255, 255, 255);
 }
 .img_interface{
     width: 100%;
@@ -60,8 +65,33 @@ body{
     background-color: #4CAF50;
     color: white;
   }
-  
-  
   .topnav .icon {
     display: none;
   }
+  .img_main{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 99.9%;
+    border: 1px solid black;
+    box-shadow: 2px 2px 10px black;
+}
+.conteudos{
+    margin-top: 30px;
+}
+.conteudos img{
+    width: 95%;
+}
+.esquerda img{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    transition: 0.5s;
+}
+.esquerda :hover{
+width: 103%;
+margin-right: 40px;
+box-shadow: 3px 3px 40px rgb(68, 38, 17);
+margin-left: 40px;
+}
+
+

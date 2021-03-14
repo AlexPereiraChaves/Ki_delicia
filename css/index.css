@@ -118,10 +118,10 @@ p{
     transition: 0.5s;
 }
 .esquerda :hover{
-width: 103%;
-margin-right: 40px;
-box-shadow: 3px 3px 40px rgb(68, 38, 17);
-margin-left: 40px;
+  width: 101%;
+  margin-right: 40px;
+  box-shadow: 3px 3px 40px rgb(68, 38, 17);
+  margin-left: 0px;
 }
 .efeito_foot{
   width: 95%;

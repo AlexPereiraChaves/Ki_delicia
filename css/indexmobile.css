@@ -91,9 +91,8 @@ p{
 }
 .esquerda :hover{
   width: 103%;
-  margin-right: 40px;
   box-shadow: 3px 3px 40px rgb(68, 38, 17);
-  margin-left: 40px;
+  margin-left: 11px;
   }
 .efeito_foot{
   width: 94%;

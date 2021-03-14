@@ -73,9 +73,9 @@ p{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5px;
     width: 99.9%;
     border: 1px solid black;
+    border-top: 3px solid black;
     box-shadow: 2px 2px 10px black;
 }
 .conteudos{
@@ -87,8 +87,14 @@ p{
 .esquerda img{
     margin-left: 8px;
     margin-bottom: 20px;
-   
+    transition: 0.5s;
 }
+.esquerda :hover{
+  width: 103%;
+  margin-right: 40px;
+  box-shadow: 3px 3px 40px rgb(68, 38, 17);
+  margin-left: 40px;
+  }
 .efeito_foot{
   width: 94%;
   background-color: #201C17;

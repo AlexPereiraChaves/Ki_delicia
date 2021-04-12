@@ -1,6 +1,9 @@
 .interface ul{
     display: flex;
     margin-bottom: 10px;
+    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .interface ul li
 {
@@ -23,10 +26,20 @@
 }
 .product .itembox
 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     position: relative;
     width: 200px;
     height: 300px;
     margin: 5px;
+}
+@media screen and (max-width: 800px) {
+.product .itembox img{
+    flex: 50%;
+    max-width: 50%;
+    max-height: 50%;
+}
 }
 .product .itembox img
 {
@@ -36,4 +49,17 @@
  width: 70%;
  height: 70%;
  object-fit: cover;
+}
+/*carrinha_--------------------------*/
+.products-container{
+    max-width: 650px;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+.products-container{  
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    padding-bottom: 100px;
 }

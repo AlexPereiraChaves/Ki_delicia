@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/cardapio.css">
     <script language=javascript src="js/cardapio.js">
     </script>
-    
+
     <title>Ki delicia!</title>
 
 </head>
@@ -23,38 +23,127 @@
             <a class="carda" href="cardapio.html">Cardápio <br>Faça seu pedido</a>
             <a href="sobre.html">Sobre nós</a>
         </div>
-        <div class= "products-container">
+        <div class="products-container">
             <h5 class="product-title">PRODUCT</h5>
             <h5 class="price">PRICE</h5>
             <h5 class="quantity">QUANTITY</h5>
             <h5 class="total">TOTAL</h5>
+
+            <section class="container content-section">
+                <h2 class="section-header">CART</h2>
+                <div class="cart-row">
+                    <span class="cart-item cart-header cart-column">ITEM</span>
+                    <span class="cart-price cart-header cart-column">PRICE</span>
+                    <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+                </div>
+                <div class="cart-items">
+                    <div class="cart-row">
+                        <div class="cart-item cart-column">
+                            <img class="cart-item-image" src="Images/Shirt.png" width="100" height="100">
+                            <span class="cart-item-title">T-Shirt</span>
+                        </div>
+                        <span class="cart-price cart-column">$19.99</span>
+                        <div class="cart-quantity cart-column">
+                            <input class="cart-quantity-input" type="number" value="1">
+                            <button class="btn btn-danger" type="button">REMOVE</button>
+                        </div>
+                    </div>
+                    <div class="cart-row">
+                        <div class="cart-item cart-column">
+                            <img class="cart-item-image" src="Images/Album 3.png" width="100" height="100">
+                            <span class="cart-item-title">Album 3</span>
+                        </div>
+                        <span class="cart-price cart-column">$9.99</span>
+                        <div class="cart-quantity cart-column">
+                            <input class="cart-quantity-input" type="number" value="2">
+                            <button class="btn btn-danger" type="button">REMOVE</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-total">
+                    <strong class="cart-total-title">Total</strong>
+                    <span class="cart-total-price">$39.97</span>
+                </div>
+                <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+            </section>
         </div>
         <div class="filtros">
-        <ul>
-            <li class="list active" data-filter="tudo">tudo</li>
-            <li class="list" data-filter="salgados">salgados</li>
-            <li class="list" data-filter="doces">doces</li>
-            <li class="list" data-filter="bolos/tortas">bolos/tortas</li>
-            <li class="list" data-filter="bebidas">bebidas</li>
-        </ul>
+            <ul>
+                <li class="list active" data-filter="all">tudo</li>
+                <li class="list" data-filter="salgados">salgados</li>
+                <li class="list" data-filter="doces">doces</li>
+                <li class="list" data-filter="bolostortas">bolos/tortas</li>
+                <li class="list" data-filter="bebidas">bebidas</li>
+            </ul>
         </div>
         <section class="shop">
             <div class="product">
-                <div class="itembox mobile"><img src="img/galeria/cafe.jpg"></div>
-                <div class="itembox camera"><img src="img/galeria/combo_pao.jpg"></div>
-                <div class="itembox watch"><img src="img/galeria/doce.jpg"></div>
-                <div class="itembox shoe"><img src="img/galeria/maca_do_amor.jpg"></div>
-                <div class="itembox headphone"><img src="img/galeria/pao.jpg"></div>
-                <div class="itembox mobile"><img src="img/galeria/pao_chique.jpg"></div>
-                <div class="itembox camera"><img src="img/galeria/pao_doce.jpg"></div>
-                <div class="itembox watch"><img src="img/galeria/pao_queijo.jpg"></div>
-                <div class="itembox shoe"><img src="img/galeria/pudim.jpg"></div>
-                <div class="itembox headphone"><img src="img/galeria/torta_morango.jpg"></div>
-    
+                <div class="itembox bebidas">
+                    <img src="img/galeria/cafe.jpg">
+                    <h3>Cafe artesanal</h3>
+                    <h3>$10,00</h3>
+                    <a class="add-cart cart1" href="#">Add Cart</a>
+                </div>
+                <div class="itembox salgados">
+                    <img src="img/galeria/combo_pao.jpg">
+                    <h3>Combo pao</h3>
+                    <h3>$20,00</h3>
+                    <a class="add-cart cart2" href="#">Add Cart</a>
+                </div>
+                <div class="itembox doces">
+                    <img src="img/galeria/doce.jpg">
+                    <h3>docinhos</h3>
+                    <h3>$10,00</h3>
+                    <a class="add-cart cart3" href="#">Add Cart</a>
+                </div>
+                <div class="itembox doces">
+                    <img src="img/galeria/maca_do_amor.jpg">
+                    <h3>maça do amor</h3>
+                    <h3>$10,00</h3>
+                    <a class="add-cart cart4" href="#">Add Cart</a>
+                </div>
+                <div class="itembox salgados">
+                    <img src="img/galeria/pao.jpg">
+                    <h3>Pao</h3>
+                    <h3>$10,00</h3>
+                    <a class="add-cart cart5" href="#">Add Cart</a>
+                </div>
+                <div class="itembox salgados">
+                    <img src="img/galeria/pao_chique.jpg">
+                    <h3>pao chique</h3>
+                    <h3>$15,00</h3>
+                    <a class="add-cart cart6" href="#">Add Cart</a>
+                </div>
+                <div class="itembox doces">
+                    <img src="img/galeria/pao_doce.jpg">
+                    <h3>pao doce</h3>
+                    <h3>$10,00</h3>
+                    <a class="add-cart cart7" href="#">Add Cart</a>
+                </div>
+                <div class="itembox salgados">
+                    <img src="img/galeria/pao_queijo.jpg">
+                    <h3>pao de queijo</h3>
+                    <h3>$10,00</h3>
+                    <a class="add-cart cart8" href="#">Add Cart</a>
+                </div>
+                <div class="itembox doces">
+                    <img src="img/galeria/pudim.jpg">
+                    <h3>pudim</h3>
+                    <h3>$10,00</h3>
+                    <a class="add-cart cart9" href="#">Add Cart</a>
+                </div>
+                <div class="itembox bolostortas">
+                    <img src="img/galeria/torta_morango.jpg">
+                    <h3>torta de morando</h3>
+                    <h3>$30,00</h3>
+                    <a class="add-cart cart10" href="#">Add Cart</a>
+                </div>
+
             </div>
         </section>
         <section class="carrinho">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo sequi odio totam tempora facere nulla modi, ullam suscipit quis asperiores a dicta aliquid explicabo architecto rerum ipsa quod quidem ipsam!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo sequi odio totam tempora facere nulla modi,
+            ullam suscipit quis asperiores a dicta aliquid explicabo architecto rerum ipsa quod quidem ipsam!
         </section>
         <div class="conteudos">
             <img src="img/logo_completa.png" />
@@ -67,6 +156,26 @@
         </footer>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.list').click(function () {
+                const value = $(this).attr('data-filter');
+                if (value == 'all') {
+                    $('.itembox').show('1000');
+                } else {
+                    $('.itembox').not('.' + value).hide('1000');
+                    $('.itembox').filter('.' + value).show('1000');
+                }
+            }
+            )
+        })
+
+        $('.list').click(function () {
+            $(this).addClass('active').siblings().removeClass('active')
+        })
+    </script>
 </body>
 
 </html>

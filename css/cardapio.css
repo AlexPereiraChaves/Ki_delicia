@@ -124,9 +124,7 @@ html, body {
     justify-content: center;
     flex-wrap: wrap;
     position: relative;
-    margin: 5px;
-   
-    
+    justify-content: space-around;
     }
 }
 .section-header {

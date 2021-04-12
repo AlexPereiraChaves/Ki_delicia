@@ -1,54 +1,86 @@
-function filtrar(id) {
-    if (id == "ctudo") {
-        document.getElementById("frame").src = "iframe_cardapio.html";
-    } else {
-        if (id == "csalg") {
-            document.getElementById("frame").src = "iframe_salgados.html";
-        } else {
-            if (id == "cdoce") {
-                document.getElementById("frame").src = "iframe_docinhos.html";
-            }
-        }
+if (document.readyState == 'loading') {
+    document.addEventListener('DOMContentLoaded', ready)
+} else {
+    ready()
+}
+function ready() {
+    var removeCartItemButtons = document.getElementsByClassName('btn-danger')
+    for (var i = 0; i < removeCartItemButtons.length; i++) {
+        var button = removeCartItemButtons[i]
+        button.addEventListener('click', removeCartItem)
+    }
+    var quantityInputs = document.getElementsByClassName('cart-quantity-input')
+    for (var i = 0; i < quantityInputs.length; i++) {
+        var input = quantityInputs[i]
+        input.addEventListener('change', quantityChanged)
+    }
+    var addToCartButtons = document.getElementsByClassName('shop-item-button')
+    for (var i = 0; i < addToCartButtons.length; i++) {
+        var button = addToCartButtons[i]
+        button.addEventListener('click', addToCartClicked)
     }
 }
-function adiciona(id) {
-    if (id == "menos_doce_azul"|| id== "menos_salgado_azul" ) {
-        if(document.getElementById("quant_doce").value >0){
-            document.getElementById("quant_doce").value = document.getElementById("quant_doce").value - 1;
-        }else{
-            if(document.getElementById("quant_salgado").value >0){
-                document.getElementById("quant_salgado").value = document.getElementById("quant_salgado").value - 1;
-            }
-        }
-      
-    } else {
-        if (id == "mais_doce_azul"||id=="mais_salgado_azul") {
-            if(document.getElementById("quant_doce").value<=7){
-                document.getElementById("quant_doce").value = parseInt(document.getElementById("quant_doce").value) +1;
-                
-            }else{
-                if(document.getElementById("quant_salgado").value<=7){
-                    document.getElementById("quant_salgado").value = parseInt(document.getElementById("quant_salgado").value) +1;
-                }
-            }
-         
-        }
-    }
+function removeCartItem(event) {
+    var buttonClicked = event.target
+    buttonClicked.parentElement.parentElement.remove()
+    updateCartTotal()
 }
-function adicionaLinha(idTabela) {
-    var tabela = document.getElementById(idTabela);
-    var numeroLinhas = tabela.rows.length;
-    var linha = tabela.insertRow(numeroLinhas);
-    var celula1 = linha.insertCell(0);
-    var celula2 = linha.insertCell(1);   
-    var celula3 = linha.insertCell(2); 
-    celula1.innerHTML = 'produto '+ Math.floor((Math.random() * 100) + 1); 
-    celula2.innerHTML =  Math.floor((Math.random() * 100) + 1); 
-    celula3.innerHTML =  "<button onclick='removeLinha(this)'>Remover</button>";
+function quantityChanged(event) {
+    var input = event.target
+    if (isNaN(input.value) || input.value <= 0) {
+        input.value = 1
+    }
+    updateCartTotal()
+}
+function addToCartClicked(event) {
+    var button = event.target
+    var shopItem = button.parentElement.parentElement
+    var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+    var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
+    var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+    addItemToCart(title, price, imageSrc)
+    updateCartTotal()
 }
 
-// funcao remove uma linha da tabela
-function removeLinha(linha) {
-  var i=linha.parentNode.parentNode.rowIndex;
-  document.getElementById('tbl').deleteRow(i);
-}            
+function addItemToCart(title, price, imageSrc) {
+    var cartRow = document.createElement('div')
+    cartRow.classList.add('cart-row')
+    var cartItems = document.getElementsByClassName('cart-items')[0]
+    var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+    for(var i= 0; i < cartItemNames.length; i++){
+        if(cartItemNames[i].innerText == title){
+            alert('O item já foi adicionado ao carrinho!')
+            return
+        }
+    }
+    var cartRowContents = `
+    <div class="cart-item cart-column">
+    <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
+    <span class="cart-item-title">${title}</span>
+</div>
+<span class="cart-price cart-column">${price}</span>
+<div class="cart-quantity cart-column">
+    <input class="cart-quantity-input" type="number" value="1">
+    <button class="btn btn-danger" type="button">REMOVE</button>
+</div>`
+    cartRow.innerHTML = cartRowContents
+    cartItems.append(cartRow)
+    cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
+    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+}
+
+function updateCartTotal() {
+    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+    var total = 0
+    for (var i = 0; i < cartRows.length; i++) {
+        var cartRow = cartRows[i]
+        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+        var price = parseFloat(priceElement.innerText.replace('$', ''))
+        var quantity = quantityElement.value
+        total = total + (price * quantity)
+    }
+    total = Math.round(total * 100) / 100
+    document.getElementsByClassName('cart-total-price')[0].innerText = 'R$' + total
+}

@@ -120,14 +120,13 @@ html, body {
 }
 @media screen and (max-width: 1200px) {
     .container{
-    overflow: hidden;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     position: relative;
     margin: 5px;
-    margin-left: 80px;
-    justify-content: space-around;
+   
+    
     }
 }
 .section-header {

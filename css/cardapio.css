@@ -103,11 +103,7 @@ figcaption{
     box-sizing: border-box;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-}
+
 
 .nav ul {
     margin: 0;
@@ -171,7 +167,7 @@ html, body {
 }
 @media screen and (max-width: 800px) {
     .container{
-        width: 80%;
+        width: 95%;
     }
 }
 .section-header {

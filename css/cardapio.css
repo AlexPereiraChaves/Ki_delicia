@@ -83,10 +83,10 @@ figcaption{
 
 /*carrinho_--------------------------*/
 .products-container{
-    max-width: 550px;
+    max-width: 650px;
     justify-content: space-around;
     margin: 0 auto;
-
+    
 }
 .products-container{  
     display: flex;
@@ -166,7 +166,7 @@ html, body {
 
 .container {
     max-width: 900px;
-    margin: 0 auto;
+   
     padding: 0 1.5em;
 }
 .section-header {

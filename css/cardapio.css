@@ -165,9 +165,14 @@ html, body {
 }
 
 .container {
-    max-width: 500px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 1.5em;
+}
+@media screen and (max-width: 800px) {
+    .container{
+        width: 50%;
+    }
 }
 .section-header {
     font-family: "Metal Mania";

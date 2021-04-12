@@ -81,11 +81,12 @@ figcaption{
     text-decoration: none;
 }
 
-/*carrinha_--------------------------*/
+/*carrinho_--------------------------*/
 .products-container{
-    max-width: 650px;
+    max-width: 550px;
     justify-content: space-around;
     margin: 0 auto;
+
 }
 .products-container{  
     display: flex;

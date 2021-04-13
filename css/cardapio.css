@@ -215,39 +215,6 @@ html, body {
     background-color: #2D9CDB;
 }
 
-.tour-row {
-    border-bottom: 1px solid black;
-    padding-bottom: 1em;
-    margin-bottom: 1em;
-}
-
-.tour-row:last-child {
-    border: none;
-}
-
-.tour-item {
-    display: inline-block;
-    padding-right: .5em;
-}
-
-.tour-date {
-    color: #555;
-    width: 11%;
-    font-weight: bold;
-}
-
-.tour-city {
-    width: 24%;
-}
-
-.tour-arena {
-    width: 42%;
-}
-
-.tour-btn {
-    max-width: 19%;
-}
-
 .shop-item {
     margin: 30px;
 }
@@ -294,8 +261,8 @@ html, body {
     align-items: center;
     border-bottom: 1px solid black;
     margin-right: 1.5em;
-    padding-bottom: 10px;
-    margin-top: 10px;
+    padding-bottom: 5px;
+    margin-top: 5px;
 }
 
 .cart-row {

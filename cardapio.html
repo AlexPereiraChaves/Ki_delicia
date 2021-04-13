@@ -23,15 +23,15 @@
             <a class="carda" href="cardapio.html">Cardápio <br>Faça seu pedido</a>
             <a href="sobre.html">Sobre nós</a>
         </div>
-        <h2 class="section-header">CART</h2>
+        
         <div class="products-container">
 
             <section class="container content-section">
-                
+                <h2 class="section-header">Carrinho</h2>
                 <div class="cart-row">
                     <span class="cart-item cart-header cart-column">ITEM</span>
-                    <span class="cart-price cart-header cart-column">PRICE</span>
-                    <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+                    <span class="cart-price cart-header cart-column">PREÇO</span>
+                    <span class="cart-quantity cart-header cart-column">QUANTIDADE</span>
                 </div>
                 <div class="cart-items">
                    
@@ -40,7 +40,7 @@
                     <strong class="cart-total-title">Total</strong>
                     <span class="cart-total-price">$0.00</span>
                 </div>
-                <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+                <button class="btn btn-primary btn-purchase" type="button">Enviar pedido</button>
             </section>
         </div>
         <div class="filtros">
@@ -58,9 +58,21 @@
                     <span class="shop-item-title">Café artesanal</span>
                     <img class="shop-item-image" src="img/galeria/cafe.jpg">
                     <div class="shop-item-details">
-                        <span class="shop-item-descricao">café simples. 250 ml . com acompanhamento de salgadinhos</span>
+                        <button data-modal-target="#modal" class="btn btn-descricao">descrição</button>
+                        <div class="modal" id="modal">
+                            <div class="modal-header">
+                              <div class="title">Example Modal</div>
+                              <button data-close-button class="close-button">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                café simples. 250 ml . com acompanhamento de salgadinhos
+                                <img class="shop-item-image" src="img/galeria/cafe.jpg">
+                                
+                            </div>
+                          </div>
+                          <div id="overlay"></div>
                         <span class="shop-item-price">R$12.99</span>
-                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART </button>
+                        <button class="btn btn-primary shop-item-button" type="button">COLOCAR CARRINHO</button>
                     </div>
                 </div>
                 <div class="itembox salgados">
@@ -178,6 +190,8 @@
             $(this).addClass('active').siblings().removeClass('active')
         })
     </script>
+ 
+  <div id="overlay"></div>
 </body>
 
 </html>

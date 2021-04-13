@@ -61,7 +61,7 @@ function addItemToCart(title, price, imageSrc) {
 <span class="cart-price cart-column">${price}</span>
 <div class="cart-quantity cart-column">
     <input class="cart-quantity-input" type="number" value="1">
-    <button class="btn btn-danger" type="button">REMOVE</button>
+    <button class="btn btn-danger" type="button">REMOVER</button>
 </div>`
     cartRow.innerHTML = cartRowContents
     cartItems.append(cartRow)
@@ -83,4 +83,40 @@ function updateCartTotal() {
     }
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText = 'R$' + total
+}
+
+// pop up descricao:
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
+
+openModalButtons.forEach(button => {
+    button.addEventListener('click',() => {
+        const modal = document.querySelector(button.dataset.modalTarget)
+        openModal(modal)
+    })
+})
+
+overlay.addEventListener('click',() =>{
+    const modals = document.querySelectorAll('.modal.active')
+    modals.forEach(modal =>{
+        closeModal(modal)
+    })
+})
+closeModalButtons.forEach(button => {
+    button.addEventListener('click',() => {
+        const modal = button.closest('.modal')
+        closeModal(modal)
+    })
+})
+
+function openModal(modal){
+    if(modal == null) return
+    modal.classList.add('active')
+    overlay.classList.add('active')
+}
+function closeModal(modal){
+    if(modal == null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
 }

@@ -272,11 +272,7 @@ html, body {
 .cart-item {
     width: 45%;
 }
-@media screen and (max-width: 1200px) {
-.cart-item {
-    width: 25%;
-}
-}
+
 .cart-price {
     width: 20%;
     font-size: 1.2em;
@@ -289,10 +285,12 @@ html, body {
 
 .cart-item-title {
     color: #333;
-    margin-left: .5em;
+    margin-left: 1.5em;
     font-size: 1.2em;
 }
-
+.container{
+    transform:scale(0.5);
+}
 .cart-item-image {
     width: 75px;
     height: auto;

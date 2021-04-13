@@ -204,8 +204,8 @@ html, body {
 }
 
 .btn-primary {
-    color: white;
-    background-color: #56CCF2;
+    color: rgb(0, 0, 0);
+    background-color: #00bbfa;
     border: none;
     border-radius: .3em;
     font-weight: bold;
@@ -214,7 +214,15 @@ html, body {
 .btn-primary:hover {
     background-color: #2D9CDB;
 }
-
+.btn-descricao{
+    background-color: #56CCF2;
+    border:  1px solid black;
+    font-weight: bold;
+    border-radius: .3em;
+}
+.btn-descricao:hover{
+    background-color: #2D9CDB; 
+}
 .shop-item {
     margin: 30px;
 }
@@ -362,14 +370,14 @@ html, body {
 .modal{
     position: fixed;
     top: 50%;
-    left: 50%;
+    left: 30%;
     transform: translate(-50%,-50%) scale(0);
     transition: 200ms ease-in-out;
     border: 1px solid black;
     border-radius: 10px;
     z-index: 10;
-    background-color: white;
-    width: 500px;
+    background-image: linear-gradient(rgb(216, 179, 79), rgba(62, 202, 202, 0.877));
+    width: 600px;
     max-width: 80%;
 }
 .modal.active{

@@ -261,8 +261,8 @@ html, body {
     align-items: center;
     border-bottom: 1px solid black;
     margin-right: 1.5em;
-    padding-bottom: 5px;
-    margin-top: 5px;
+    padding-bottom: 10px;
+    margin-top: 10px;
 }
 
 .cart-row {

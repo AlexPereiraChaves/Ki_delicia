@@ -290,7 +290,7 @@ html, body {
 }
 @media screen and (max-width: 1200px) {
 .container{
-    transform:scale(0.1);
+    transform:scale(0.7);
 }
 }
 .cart-item-image {

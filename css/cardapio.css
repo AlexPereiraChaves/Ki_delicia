@@ -380,10 +380,7 @@ html, body {
     width: 600px;
     max-width: 80%;
 }
-.modal .img{
-    top: 50%;
-    left: 50%;
-}
+
 .modal.active{
     transform: translate(-50%,-50%) scale(1);
 }
@@ -408,6 +405,11 @@ html, body {
 }
 .modal-body{
     padding: 10px 15px;
+}
+@media screen and (max-width: 1200px)  {
+    .modalimg{
+    transform: scale(0.7);
+    } 
 }
 #overlay{
     position: fixed;

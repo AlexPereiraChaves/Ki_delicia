@@ -204,7 +204,7 @@ html, body {
 }
 
 .btn-primary {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     background-color: #00bbfa;
     border: none;
     border-radius: .3em;
@@ -370,7 +370,7 @@ html, body {
 .modal{
     position: fixed;
     top: 50%;
-    left: 30%;
+    left: 50%;
     transform: translate(-50%,-50%) scale(0);
     transition: 200ms ease-in-out;
     border: 1px solid black;
@@ -379,6 +379,10 @@ html, body {
     background-image: linear-gradient(rgb(216, 179, 79), rgba(62, 202, 202, 0.877));
     width: 600px;
     max-width: 80%;
+}
+.modal .img{
+    top: 50%;
+    left: 50%;
 }
 .modal.active{
     transform: translate(-50%,-50%) scale(1);

@@ -371,7 +371,7 @@ html, body {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%) scale(0);
+    transform: translate(-50%,-50%) scale(1);
     transition: 200ms ease-in-out;
     border: 1px solid black;
     border-radius: 10px;
@@ -408,12 +408,12 @@ html, body {
 }
 @media screen and (max-width: 1200px)  {
     .modalimg{
-    transform: scale(0.7);
+    transform: scale(0.9);
     } 
 }
 #overlay{
     position: fixed;
-    opacity: 0;
+    opacity: 1;
     transition:  200ms ease-in-out;
     top: 0;
     left: 0;

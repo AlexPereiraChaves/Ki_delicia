@@ -47,8 +47,8 @@ function addItemToCart(title, price, imageSrc) {
     cartRow.classList.add('cart-row')
     var cartItems = document.getElementsByClassName('cart-items')[0]
     var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
-    for(var i= 0; i < cartItemNames.length; i++){
-        if(cartItemNames[i].innerText == title){
+    for (var i = 0; i < cartItemNames.length; i++) {
+        if (cartItemNames[i].innerText == title) {
             alert('O item já foi adicionado ao carrinho!')
             return
         }
@@ -86,37 +86,240 @@ function updateCartTotal() {
 }
 
 // pop up descricao:
-const openModalButtons = document.querySelectorAll('[data-modal-target]')
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
-const overlay = document.getElementById('overlay')
+function abrePopup(classe) {
+    if (classe == "um") {
+        var popup = document.createElement('div')
+        popup.classList.add('pop_up_title')
+        var cartItems = document.getElementsByClassName('popups')[0]
 
-openModalButtons.forEach(button => {
-    button.addEventListener('click',() => {
-        const modal = document.querySelector(button.dataset.modalTarget)
-        openModal(modal)
-    })
-})
+        var newpopup = `
+        <div class="modal um" id="modal">
+<div class="modal-header">
+    <div class="title">Café artesanal</div>
+    <button data-close-button class="close-button">Fechar janela &times;</button>
+</div>
+<div class="modal-body 1">
+<h4>café quente na garrafa. 350 ml . com acompanhamento de salgadinhos</h4>
+<img class="modalimg" src="img/galeria/cafe.jpg">
+</div>
+</div>
+<div id="overlay"></div>`
+        popup.innerHTML = newpopup
+        cartItems.append(popup)
+        popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+    } else {
+        if (classe == "dois") {
+            var popup = document.createElement('div')
+            popup.classList.add('pop_up_title')
+            var cartItems = document.getElementsByClassName('popups')[0]
 
-overlay.addEventListener('click',() =>{
-    const modals = document.querySelectorAll('.modal.active')
-    modals.forEach(modal =>{
-        closeModal(modal)
-    })
-})
-closeModalButtons.forEach(button => {
-    button.addEventListener('click',() => {
-        const modal = button.closest('.modal')
-        closeModal(modal)
-    })
-})
+            var newpopup = `
+        <div class="modal dois" id="modal">
+<div class="modal-header">
+    <div class="title">Combo café da manhã</div>
+    <button data-close-button class="close-button">Fechar janela &times;</button>
+</div>
+<div class="modal-body">
+<h4>Combo especial da casa! incluindo: torradas, pão fresco, doce de amora e pão de
+queijo</h4>
+<img class="modalimg" src="img/galeria/combo_pao.jpg">
+</div>
+</div>
+<div id="overlay"></div>`
 
-function openModal(modal){
-    if(modal == null) return
-    modal.classList.add('active')
-    overlay.classList.add('active')
+            popup.innerHTML = newpopup
+            cartItems.append(popup)
+            popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+        } else {
+            if (classe == "tres") {
+                var popup = document.createElement('div')
+                popup.classList.add('pop_up_title')
+                var cartItems = document.getElementsByClassName('popups')[0]
+
+                var newpopup = `
+                <div class="modal dois" id="modal">
+        <div class="modal-header">
+            <div class="title">Docinhos artesanais</div>
+            <button data-close-button class="close-button">Fechar janela &times;</button>
+        </div>
+        <div class="modal-body">
+        <h4>Doces de brigadeiro e mais! vem 10 unidades de 20 gramas por item.</h4>
+        <img class="modalimg" src="img/galeria/doce.jpg">
+        </div>
+        </div>
+        <div id="overlay"></div>`
+
+                popup.innerHTML = newpopup
+                cartItems.append(popup)
+                popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+            } else {
+                if (classe == "quatro") {
+                    var popup = document.createElement('div')
+                    popup.classList.add('pop_up_title')
+                    var cartItems = document.getElementsByClassName('popups')[0]
+
+                    var newpopup = `
+                <div class="modal dois" id="modal">
+        <div class="modal-header">
+            <div class="title">Maçã do amor</div>
+            <button data-close-button class="close-button">Fechar janela &times;</button>
+        </div>
+        <div class="modal-body">
+        <h4>A famosa maçã do amor!vem três unidades de 100 gramas por item.</h4>
+        <img class="modalimg" src="img/galeria/maca_do_amor.jpg">
+        </div>
+        </div>
+        <div id="overlay"></div>`
+
+                    popup.innerHTML = newpopup
+                    cartItems.append(popup)
+                    popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+                }else{
+                    if(classe == "cinco"){
+                        var popup = document.createElement('div')
+                    popup.classList.add('pop_up_title')
+                    var cartItems = document.getElementsByClassName('popups')[0]
+
+                    var newpopup = `
+                <div class="modal dois" id="modal">
+        <div class="modal-header">
+            <div class="title">Pão rústico</div>
+            <button data-close-button class="close-button">Fechar janela &times;</button>
+        </div>
+        <div class="modal-body">
+        <h4>Experimente o melhor dos pães! vêm com 10 por item.</h4>
+        <img class="modalimg" src="img/galeria/pao.jpg">
+        </div>
+        </div>
+        <div id="overlay"></div>`
+
+                    popup.innerHTML = newpopup
+                    cartItems.append(popup)
+                    popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+                    }else{
+                        if(classe == "seis"){
+                            var popup = document.createElement('div')
+                            popup.classList.add('pop_up_title')
+                            var cartItems = document.getElementsByClassName('popups')[0]
+        
+                            var newpopup = `
+                        <div class="modal dois" id="modal">
+                <div class="modal-header">
+                    <div class="title">Pão integral</div>
+                    <button data-close-button class="close-button">Fechar janela &times;</button>
+                </div>
+                <div class="modal-body">
+                <h4>Pãozinho integral. vêm 10 unidades de 50 gramas por item</h4>
+                <img class="modalimg" src="img/galeria/pao_chique.jpg">
+                </div>
+                </div>
+                <div id="overlay"></div>`
+        
+                            popup.innerHTML = newpopup
+                            cartItems.append(popup)
+                            popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+                        }else{
+                            if(classe == "sete"){
+                                var popup = document.createElement('div')
+                                popup.classList.add('pop_up_title')
+                                var cartItems = document.getElementsByClassName('popups')[0]
+            
+                                var newpopup = `
+                            <div class="modal dois" id="modal">
+                    <div class="modal-header">
+                        <div class="title">Pão doce</div>
+                        <button data-close-button class="close-button">Fechar janela &times;</button>
+                    </div>
+                    <div class="modal-body">
+                    <h4>Pão doce! vêm 10 unidades de 50 gramas por item</h4>
+                    <img class="modalimg" src="img/galeria/pao_doce.jpg">
+                    </div>
+                    </div>
+                    <div id="overlay"></div>`
+            
+                                popup.innerHTML = newpopup
+                                cartItems.append(popup)
+                                popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+                            }else{
+                                if(classe == "oito"){
+                                    var popup = document.createElement('div')
+                                    popup.classList.add('pop_up_title')
+                                    var cartItems = document.getElementsByClassName('popups')[0]
+                
+                                    var newpopup = `
+                                <div class="modal dois" id="modal">
+                        <div class="modal-header">
+                            <div class="title">Pão de queijo</div>
+                            <button data-close-button class="close-button">Fechar janela &times;</button>
+                        </div>
+                        <div class="modal-body">
+                        <h4>O clássico pão de queijo! vêm 10 unidade de 20 gramas por item.</h4>
+                        <img class="modalimg" src="img/galeria/pao_queijo.jpg">
+                        </div>
+                        </div>
+                        <div id="overlay"></div>`
+                
+                                    popup.innerHTML = newpopup
+                                    cartItems.append(popup)
+                                    popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+                                }else{
+                                    if(classe == "nove"){
+                                        var popup = document.createElement('div')
+                                        popup.classList.add('pop_up_title')
+                                        var cartItems = document.getElementsByClassName('popups')[0]
+                    
+                                        var newpopup = `
+                                    <div class="modal dois" id="modal">
+                            <div class="modal-header">
+                                <div class="title">Pudim</div>
+                                <button data-close-button class="close-button">Fechar janela &times;</button>
+                            </div>
+                            <div class="modal-body">
+                            <h4>Pudim! vem 5 unidades de 30 gramas por item</h4>
+                            <img class="modalimg" src="img/galeria/pudim.jpg">
+                            </div>
+                            </div>
+                            <div id="overlay"></div>`
+                    
+                                        popup.innerHTML = newpopup
+                                        cartItems.append(popup)
+                                        popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+                                    }else{
+                                        if(classe == "dez"){
+                                            var popup = document.createElement('div')
+                                            popup.classList.add('pop_up_title')
+                                            var cartItems = document.getElementsByClassName('popups')[0]
+                        
+                                            var newpopup = `
+                                        <div class="modal dois" id="modal">
+                                <div class="modal-header">
+                                    <div class="title">Torta de Morango</div>
+                                    <button data-close-button class="close-button">Fechar janela &times;</button>
+                                </div>
+                                <div class="modal-body">
+                                <h4>Torta de morango! Vêm 1 unidade de 300 gramas por item</h4>
+                                <img class="modalimg" src="img/galeria/torta_morango.jpg">
+                                </div>
+                                </div>
+                                <div id="overlay"></div>`
+                        
+                                            popup.innerHTML = newpopup
+                                            cartItems.append(popup)
+                                            popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
-function closeModal(modal){
-    if(modal == null) return
-    modal.classList.remove('active')
-    overlay.classList.remove('active')
+
+function removepopup(event) {
+    var buttonClicked = event.target
+    buttonClicked.parentElement.parentElement.remove()
+    document.getElementById('overlay').parentElement.remove()
 }

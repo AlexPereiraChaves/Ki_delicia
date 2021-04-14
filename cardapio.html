@@ -23,7 +23,7 @@
             <a class="carda" href="cardapio.html">Cardápio <br>Faça seu pedido</a>
             <a href="sobre.html">Sobre nós</a>
         </div>
-        
+
         <div class="products-container">
 
             <section class="container content-section">
@@ -34,7 +34,7 @@
                     <span class="cart-quantity cart-header cart-column">QUANTIDADE</span>
                 </div>
                 <div class="cart-items">
-                   
+
                 </div>
                 <div class="cart-total">
                     <strong class="cart-total-title">Total</strong>
@@ -53,24 +53,15 @@
             </ul>
         </div>
         <section class="shop">
+            
             <div class="product">
+                <div class="pop_up_title"></div>
+                <div class="popups"></div>
                 <div class="itembox bebidas">
                     <span class="shop-item-title">Café artesanal</span>
                     <img class="shop-item-image" src="img/galeria/cafe.jpg">
                     <div class="shop-item-details">
-                        <button data-modal-target="#modal" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <div class="modal" id="modal">
-                            <div class="modal-header">
-                              <div class="title">Example Modal</div>
-                              <button data-close-button class="close-button">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                               <h4>café quente na garrafa. 350 ml . com acompanhamento de salgadinhos</h4>
-                                <img class="modalimg" src="img/galeria/cafe.jpg">
-                                
-                            </div>
-                          </div>
-                          <div id="overlay"></div>
+                        <button onclick="abrePopup('um')" class="btn btn-descricao">DESCRIÇÃO</button>
                         <span class="shop-item-price">R$12.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
@@ -79,7 +70,7 @@
                     <span class="shop-item-title">Combo café da manhã</span>
                     <img class="shop-item-image" src="img/galeria/combo_pao.jpg">
                     <div class="shop-item-details">
-                        <span class="shop-item-descricao">Combo especial da casa! incluindo: torradas, pão fresco, doce de amora e pão de queijo</span>
+                        <button  onclick="abrePopup('dois')" class="btn btn-descricao">DESCRIÇÃO</button>
                         <span class="shop-item-price">R$12.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART </button>
                     </div>
@@ -88,7 +79,7 @@
                     <span class="shop-item-title">Docinhos artesanais</span>
                     <img class="shop-item-image" src="img/galeria/doce.jpg">
                     <div class="shop-item-details">
-                        <span class="shop-item-descricao">Doces de brigadeiro e mais! vem 10 unidades de 20 gramas por item.</span>
+                        <button  onclick="abrePopup('tres')" class="btn btn-descricao">DESCRIÇÃO</button>
                         <span class="shop-item-price">R$12.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART </button>
                     </div>
@@ -97,7 +88,7 @@
                     <span class="shop-item-title">Maçã do amor</span>
                     <img class="shop-item-image" src="img/galeria/maca_do_amor.jpg">
                     <div class="shop-item-details">
-                        <span class="shop-item-descricao">A famosa maçã do amor!vem três unidades de 100 gramas por item.</span>
+                        <button  onclick="abrePopup('quatro')" class="btn btn-descricao">DESCRIÇÃO</button>
                         <span class="shop-item-price">R$12.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART </button>
                     </div>
@@ -106,7 +97,7 @@
                     <span class="shop-item-title">Pão rústico</span>
                     <img class="shop-item-image" src="img/galeria/pao.jpg">
                     <div class="shop-item-details">
-                        <span class="shop-item-descricao">Experimento o melhor dos pães! vêm com 10 por item.</span>
+                        <button  onclick="abrePopup('cinco')" class="btn btn-descricao">DESCRIÇÃO</button>
                         <span class="shop-item-price">R$12.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART </button>
                     </div>
@@ -115,7 +106,7 @@
                     <span class="shop-item-title">Pão integral</span>
                     <img class="shop-item-image" src="img/galeria/pao_chique.jpg">
                     <div class="shop-item-details">
-                        <span class="shop-item-descricao">Pãozinho integral. vêm 10 unidades de 50 gramas por item</span>
+                        <button  onclick="abrePopup('seis')" class="btn btn-descricao">DESCRIÇÃO</button>
                         <span class="shop-item-price">R$12.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART </button>
                     </div>
@@ -124,7 +115,7 @@
                     <span class="shop-item-title">Pão doce</span>
                     <img class="shop-item-image" src="img/galeria/pao_doce.jpg">
                     <div class="shop-item-details">
-                        <span class="shop-item-descricao">Pão doce! vêm 10 unidades de 50 gramas por item</span>
+                        <button  onclick="abrePopup('sete')" class="btn btn-descricao">DESCRIÇÃO</button>
                         <span class="shop-item-price">R$12.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART </button>
                     </div>
@@ -133,7 +124,7 @@
                     <span class="shop-item-title">Pão de queijo</span>
                     <img class="shop-item-image" src="img/galeria/pao_queijo.jpg">
                     <div class="shop-item-details">
-                        <span class="shop-item-descricao">O clássico pão de queijo! vêm 10 unidade de 20 gramas por item.</span>
+                        <button  onclick="abrePopup('oito')" class="btn btn-descricao">DESCRIÇÃO</button>
                         <span class="shop-item-price">$12.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART </button>
                     </div>
@@ -142,7 +133,7 @@
                     <span class="shop-item-title">Pudim</span>
                     <img class="shop-item-image" src="img/galeria/pudim.jpg">
                     <div class="shop-item-details">
-                        <span class="shop-item-descricao">Pudim! vem 5 unidades de 30 gramas por item</span>
+                        <button  onclick="abrePopup('nove')" class="btn btn-descricao">DESCRIÇÃO</button>
                         <span class="shop-item-price">$12.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART </button>
                     </div>
@@ -151,7 +142,7 @@
                     <span class="shop-item-title">Torta de Morango</span>
                     <img class="shop-item-image" src="img/galeria/torta_morango.jpg">
                     <div class="shop-item-details">
-                        <span class="shop-item-descricao">Torta de morango! Vêm 1 unidade de 300 gramas por item</span>
+                        <button  onclick="abrePopup('dez')" class="btn btn-descricao">DESCRIÇÃO</button>
                         <span class="shop-item-price">$12.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART </button>
                     </div>
@@ -190,8 +181,7 @@
             $(this).addClass('active').siblings().removeClass('active')
         })
     </script>
- 
-  <div id="overlay"></div>
+
 </body>
 
 </html>

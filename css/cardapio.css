@@ -256,12 +256,16 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 200px;
+    
 }
 .shop-item-descricao {
     display: none;
 }
-
+@media screen and (max-width: 1200px) {
+    .shop-item-image {
+        height: 150px;
+    }
+}
 .cart-header {
     font-weight: bold;
     font-size: 1.25em;

@@ -107,7 +107,7 @@ function abrePopupPurchase(cartItems) {
     <input type="text"  id="numCasa" size="20" maxlength="50"
     placeholder="Clique aqui para digitar o número da residência" required="required" />
     <img class="modalimg" src="">
-    <button type="submit" data-close-button class="close-button" id="submit" onclick="getInputValue();" >Submit</button>
+    <button type="submit" data-close-button class="close-button btn btn-primary btn-purchase"  id="submit" onclick="getInputValue();" >Prosseguir-></button>
     </div>
     </div>
     <div id="overlay"></div>

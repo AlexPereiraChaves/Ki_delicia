@@ -481,6 +481,8 @@ html, body {
         padding: 6px 10px;
         font-size: 20px;
         text-decoration: none;     
+        top: 50%;
+        left: 50%;
     }
     .modal-body h4{
         font-size: medium;

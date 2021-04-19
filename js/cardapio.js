@@ -3,6 +3,7 @@ if (document.readyState == 'loading') {
 } else {
     ready()
 }
+
 function ready() {
     var removeCartItemButtons = document.getElementsByClassName('btn-danger')
     for (var i = 0; i < removeCartItemButtons.length; i++) {
@@ -86,6 +87,77 @@ function updateCartTotal() {
 }
 
 // pop up descricao:
+function abrePopupPurchase(cartItems) {
+    var popup = document.createElement('div')
+    popup.classList.add('pop_up_title')
+    var cartItems = document.getElementsByClassName('popups')[0]
+
+    var htmldisplay = `
+    <div class="modal um" id="modal">
+    <div class="modal-header">
+        <div class="title">Falta pouco para finalizar o pedido!</div>
+        <button data-close-button class="close-button">Fechar janela &times;</button>
+    </div>
+    <div class="modal-body 1">
+    <h4>Informe o endereço de entrega:(entregamos só na cidade de Correia Pinto)</h4>
+    <input type="text"  id="endereco" size="20" maxlength="50"
+    placeholder="Clique aqui para digitar o endereço completo" required="required" />
+    <img class="modalimg" src="">
+    <h4>Informe o número da residência:</h4>
+    <input type="text"  id="numCasa" size="20" maxlength="50"
+    placeholder="Clique aqui para digitar o número da residência" required="required" />
+    <img class="modalimg" src="">
+    <button type="submit" data-close-button class="close-button" id="submit" onclick="getInputValue();" >Submit</button>
+    </div>
+    </div>
+    <div id="overlay"></div>
+    `
+    popup.innerHTML = htmldisplay
+    cartItems.append(popup)
+    popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+    popup.getElementsByClassName('close-button')[1].addEventListener('click', removepopup)
+}
+function getInputValue(){
+    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+    console.log(cartItemContainer);
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+    var Array = [];
+    for(var i=0;i< cartRows.length;i++){
+      
+        var cartRow = cartRows[i]
+        var nameElement = cartRow.getElementsByClassName('cart-item-title')[0]
+        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+        var nome = nameElement.innerText;
+        var price = priceElement.innerText;
+        var quantity = quantityElement.value;
+
+        Array.push(nome,"Quantidade: ",quantity,"Preço: ",price);
+    }
+    var precoTotal = document.getElementsByClassName('cart-total-price')[0];
+    var total = precoTotal.innerText;
+    
+
+    var popup = document.createElement('div')
+    popup.classList.add('pop_up_title')
+    var cartItems = document.getElementsByClassName('popups')[0]
+    var end = document.getElementById("endereco").value;
+    var numero = document.getElementById("numCasa").value;
+    var htmldisplay = ` <div class="modal um" id="modal">
+    <div class="modal-header">
+        <div class="title">Café artesanal</div>
+        <button data-close-button class="close-button">Fechar janela &times;</button>
+    </div>
+    <div class="modal-body 1">
+     <a href="https://wa.me/554896418819?text=Endeço:%20${end}%20Número da residência:%20${numero}%20 Total:${total}%20Pedido:%20${Array}">Envie seu pedido!</a>
+    </div>
+    </div><div id="overlay"></div>`
+    
+    popup.innerHTML = htmldisplay
+    cartItems.append(popup)
+    popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+   
+}
 function abrePopup(classe) {
     if (classe == "um") {
         var popup = document.createElement('div')
@@ -174,13 +246,13 @@ queijo</h4>
                     popup.innerHTML = newpopup
                     cartItems.append(popup)
                     popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
-                }else{
-                    if(classe == "cinco"){
+                } else {
+                    if (classe == "cinco") {
                         var popup = document.createElement('div')
-                    popup.classList.add('pop_up_title')
-                    var cartItems = document.getElementsByClassName('popups')[0]
+                        popup.classList.add('pop_up_title')
+                        var cartItems = document.getElementsByClassName('popups')[0]
 
-                    var newpopup = `
+                        var newpopup = `
                 <div class="modal dois" id="modal">
         <div class="modal-header">
             <div class="title">Pão rústico</div>
@@ -193,15 +265,15 @@ queijo</h4>
         </div>
         <div id="overlay"></div>`
 
-                    popup.innerHTML = newpopup
-                    cartItems.append(popup)
-                    popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
-                    }else{
-                        if(classe == "seis"){
+                        popup.innerHTML = newpopup
+                        cartItems.append(popup)
+                        popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+                    } else {
+                        if (classe == "seis") {
                             var popup = document.createElement('div')
                             popup.classList.add('pop_up_title')
                             var cartItems = document.getElementsByClassName('popups')[0]
-        
+
                             var newpopup = `
                         <div class="modal dois" id="modal">
                 <div class="modal-header">
@@ -214,16 +286,16 @@ queijo</h4>
                 </div>
                 </div>
                 <div id="overlay"></div>`
-        
+
                             popup.innerHTML = newpopup
                             cartItems.append(popup)
                             popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
-                        }else{
-                            if(classe == "sete"){
+                        } else {
+                            if (classe == "sete") {
                                 var popup = document.createElement('div')
                                 popup.classList.add('pop_up_title')
                                 var cartItems = document.getElementsByClassName('popups')[0]
-            
+
                                 var newpopup = `
                             <div class="modal dois" id="modal">
                     <div class="modal-header">
@@ -236,16 +308,16 @@ queijo</h4>
                     </div>
                     </div>
                     <div id="overlay"></div>`
-            
+
                                 popup.innerHTML = newpopup
                                 cartItems.append(popup)
                                 popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
-                            }else{
-                                if(classe == "oito"){
+                            } else {
+                                if (classe == "oito") {
                                     var popup = document.createElement('div')
                                     popup.classList.add('pop_up_title')
                                     var cartItems = document.getElementsByClassName('popups')[0]
-                
+
                                     var newpopup = `
                                 <div class="modal dois" id="modal">
                         <div class="modal-header">
@@ -258,16 +330,16 @@ queijo</h4>
                         </div>
                         </div>
                         <div id="overlay"></div>`
-                
+
                                     popup.innerHTML = newpopup
                                     cartItems.append(popup)
                                     popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
-                                }else{
-                                    if(classe == "nove"){
+                                } else {
+                                    if (classe == "nove") {
                                         var popup = document.createElement('div')
                                         popup.classList.add('pop_up_title')
                                         var cartItems = document.getElementsByClassName('popups')[0]
-                    
+
                                         var newpopup = `
                                     <div class="modal dois" id="modal">
                             <div class="modal-header">
@@ -280,16 +352,16 @@ queijo</h4>
                             </div>
                             </div>
                             <div id="overlay"></div>`
-                    
+
                                         popup.innerHTML = newpopup
                                         cartItems.append(popup)
                                         popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
-                                    }else{
-                                        if(classe == "dez"){
+                                    } else {
+                                        if (classe == "dez") {
                                             var popup = document.createElement('div')
                                             popup.classList.add('pop_up_title')
                                             var cartItems = document.getElementsByClassName('popups')[0]
-                        
+
                                             var newpopup = `
                                         <div class="modal dois" id="modal">
                                 <div class="modal-header">
@@ -302,10 +374,11 @@ queijo</h4>
                                 </div>
                                 </div>
                                 <div id="overlay"></div>`
-                        
+
                                             popup.innerHTML = newpopup
                                             cartItems.append(popup)
                                             popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+
                                         }
                                     }
                                 }

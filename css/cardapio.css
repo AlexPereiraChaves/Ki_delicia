@@ -453,7 +453,7 @@ html, body {
     height: 40px;
 }
 .linkexplica{
-    background-color: rgba(18, 24, 17, 0.418);
+    background-color: rgba(18, 24, 17, 0.158);
     margin-left:  10px;
     margin-right: 15px;
 }
@@ -466,6 +466,8 @@ html, body {
     padding: 14px 85px;
     text-decoration: none;
     font-size: 26px;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 2px 2px 30px rgb(255, 255, 255);
     
 }
 .modal-body h4{

@@ -515,3 +515,9 @@ html, body {
 .topo{
     margin-left: 50px;
 }
+@media screen and (max-width: 1200px)  {
+    .topo{
+        margin-left: 50px;
+        font-size: 14px;
+    } 
+}

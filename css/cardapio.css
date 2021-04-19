@@ -452,6 +452,13 @@ html, body {
     width: 400px;
     height: 40px;
 }
+@media screen and (max-width: 1200px)  {
+    #endereco,#numCasa{
+        width: 300px;
+        height: 40px;
+    }
+}
+
 .modal-body h4{
     font-size: medium;
     font-weight: bold;

@@ -414,7 +414,7 @@ html, body {
     .modalimg{
     transform: scale(0.9);
     max-height: 200px;
-    max-width: 250px;
+    max-width: 450px;
     } 
 }
 #overlay{

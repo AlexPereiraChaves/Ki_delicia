@@ -413,8 +413,9 @@ html, body {
 @media screen and (max-width: 1200px)  {
     .modalimg{
     transform: scale(0.9);
-    max-height: 200px;
-    max-width: 450px;
+    max-height: 400px;
+    max-width: 400px;
+    min-width: 300px;
     } 
     .modal{
         position: fixed;

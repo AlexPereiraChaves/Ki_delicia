@@ -459,7 +459,7 @@ html, body {
 }
 .linkWhats{
     margin: 70px;
-    padding-top: 30px;
+    padding-top: 40px;
     background-color: rgb(68, 180, 34);
     color: #def8e2;
     text-align: center;
@@ -479,7 +479,7 @@ html, body {
         height: 40px;
     }
     .linkWhats{
-        margin: 20px;
+        margin: 35px;
         background-color: rgb(68, 180, 34);
         color: #def8e2;
         text-align: center;

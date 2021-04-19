@@ -376,7 +376,7 @@ html, body {
     border: 1px solid black;
     border-radius: 10px;
     z-index: 10;
-    background-image: linear-gradient(rgb(216, 179, 79), rgba(62, 202, 202, 0.877));
+    background-image: linear-gradient(rgb(233, 210, 149), rgb(189, 192, 192));
     width: 600px;
     max-width: 80%;
 }
@@ -413,6 +413,8 @@ html, body {
 @media screen and (max-width: 1200px)  {
     .modalimg{
     transform: scale(0.9);
+    max-height: 150px;
+    max-width: 150px;
     } 
 }
 #overlay{

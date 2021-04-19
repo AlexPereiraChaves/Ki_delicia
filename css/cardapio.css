@@ -463,6 +463,11 @@ html, body {
     font-size: 26px;
     
 }
+.modal-body h4{
+    font-size: medium;
+    font-size: 26px;
+    font-weight: bold;
+}
 @media screen and (max-width: 1200px)  {
     #endereco,#numCasa{
         width: 300px;
@@ -473,15 +478,15 @@ html, body {
         background-color: rgb(68, 180, 34);
         color: #def8e2;
         text-align: center;
-        padding: 14px 85px;
+        padding: 14px 14px;
         text-decoration: none;
         
         
     }
+    .modal-body h4{
+        font-size: medium;
+        font-size: 14px;
+        font-weight: bold;
+    }
 }
 
-.modal-body h4{
-    font-size: medium;
-    font-size: 26px;
-    font-weight: bold;
-}

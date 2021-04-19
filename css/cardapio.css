@@ -478,8 +478,8 @@ html, body {
         background-color: rgb(68, 180, 34);
         color: #def8e2;
         text-align: center;
-        padding: 5px 10px;
-        font-size: 12px;
+        padding: 6px 10px;
+        font-size: 18px;
         text-decoration: none;     
     }
     .modal-body h4{

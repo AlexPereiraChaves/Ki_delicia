@@ -458,7 +458,17 @@ html, body {
         height: 40px;
     }
 }
-
+.linkWhats{
+    margin: 30px;
+    padding: auto   ;
+    background-color: rgb(68, 180, 34);
+    color: #def8e2;
+    text-align: center;
+    padding: 14px 85px;
+    text-decoration: none;
+    font-size: 26px;
+    
+}
 .modal-body h4{
     font-size: medium;
     font-weight: bold;

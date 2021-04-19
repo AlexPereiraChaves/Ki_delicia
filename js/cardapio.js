@@ -146,10 +146,10 @@ function getInputValue(){
     var htmldisplay = ` <div class="modal um" id="modal">
     <div class="modal-header">
         <div class="title">Café artesanal</div>
-        <button data-close-button class="close-button">Fechar janela &times;</button>
+        <button data-close-button class="close-button">Cancelar: &times;</button>
     </div>
     <div class="modal-body 1">
-     <a href="https://wa.me/554896418819?text=Endeço:%20${end}%20Número da residência:%20${numero}%20 Total:${total}%20Pedido:%20${Array}">Envie seu pedido!</a>
+     <a class="linkWhats" href="https://wa.me/554896418819?text=Endeço:%20${end}%20Número da residência:%20${numero}%20 Total:${total}%20Pedido:%20${Array}">Envie seu pedido!</a>
     </div>
     </div><div id="overlay"></div>`
     

@@ -452,12 +452,6 @@ html, body {
     width: 400px;
     height: 40px;
 }
-@media screen and (max-width: 1200px)  {
-    #endereco,#numCasa{
-        width: 300px;
-        height: 40px;
-    }
-}
 .linkWhats{
     margin: 30px;
     padding: auto   ;
@@ -469,6 +463,23 @@ html, body {
     font-size: 26px;
     
 }
+@media screen and (max-width: 1200px)  {
+    #endereco,#numCasa{
+        width: 300px;
+        height: 40px;
+    }
+    .linkWhats{
+        margin: 0;
+        background-color: rgb(68, 180, 34);
+        color: #def8e2;
+        text-align: center;
+        padding: 14px 85px;
+        text-decoration: none;
+        font-size: 26px;
+        
+    }
+}
+
 .modal-body h4{
     font-size: medium;
     font-weight: bold;

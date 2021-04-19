@@ -453,8 +453,8 @@ html, body {
     height: 40px;
 }
 .linkWhats{
-    margin: 30px;
-    padding: auto   ;
+    margin: 70px;
+    padding-top: 30px;
     background-color: rgb(68, 180, 34);
     color: #def8e2;
     text-align: center;
@@ -478,10 +478,8 @@ html, body {
         background-color: rgb(68, 180, 34);
         color: #def8e2;
         text-align: center;
-        padding: 14px 14px;
-        text-decoration: none;
         
-        
+        text-decoration: none;     
     }
     .modal-body h4{
         font-size: medium;

@@ -413,8 +413,8 @@ html, body {
 @media screen and (max-width: 1200px)  {
     .modalimg{
     transform: scale(0.9);
-    max-height: 150px;
-    max-width: 150px;
+    max-height: 200px;
+    max-width: 250px;
     } 
 }
 #overlay{

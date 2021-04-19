@@ -256,6 +256,7 @@ html, body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin: 200px;
 }
 .shop-item-descricao {
     display: none;
@@ -466,7 +467,7 @@ html, body {
     padding: 14px 85px;
     text-decoration: none;
     font-size: 26px;
-    border: 1px solid rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
     box-shadow: 2px 2px 30px rgb(255, 255, 255);
     
 }

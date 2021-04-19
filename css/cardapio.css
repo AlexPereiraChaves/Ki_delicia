@@ -475,12 +475,13 @@ html, body {
         text-align: center;
         padding: 14px 85px;
         text-decoration: none;
-        font-size: 26px;
+        
         
     }
 }
 
 .modal-body h4{
     font-size: medium;
+    font-size: 26px;
     font-weight: bold;
 }

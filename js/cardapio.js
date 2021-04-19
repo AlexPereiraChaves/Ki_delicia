@@ -51,7 +51,6 @@ function addItemToCart(title, price, imageSrc) {
     alert('Adicionado no carrinho!')
     for (var i = 0; i < cartItemNames.length; i++) {
         if (cartItemNames[i].innerText == title) {
-            alert('O item já foi adicionado ao carrinho!')
             return
         }
     }

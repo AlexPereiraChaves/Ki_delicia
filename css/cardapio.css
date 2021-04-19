@@ -416,6 +416,19 @@ html, body {
     max-height: 200px;
     max-width: 450px;
     } 
+    .modal{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%) scale(1);
+        transition: 200ms ease-in-out;
+        border: 1px solid black;
+        border-radius: 10px;
+        z-index: 10;
+        background-image: linear-gradient(rgb(233, 210, 149), rgb(189, 192, 192));
+        width: 600px;
+        max-width: 95%;
+    }
 }
 #overlay{
     position: fixed;

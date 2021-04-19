@@ -507,3 +507,8 @@ html, body {
 .cart-total-price{
     font-size: 28px;
 }
+.aviso{
+  margin: auto;
+  padding: auto;    
+ font-size: 18px;
+}

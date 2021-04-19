@@ -416,7 +416,7 @@ html, body {
     max-height: 400px;
     max-width: 400px;
     min-width: 300px;
-    margin-left: 0;
+    margin-left: -10px;
    
     } 
     .modal{

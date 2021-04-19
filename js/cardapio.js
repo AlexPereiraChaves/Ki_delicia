@@ -150,7 +150,7 @@ function getInputValue(){
     </div>
     <div class="modal-body 1">
     <h4>   </h4>
-     <a class="linkWhats" href="https://wa.me/554896418819?text=Endeço:%20${end}%20Número da residência:%20${numero}%20 Total:${total}%20Pedido:%20${Array}">Envie seu pedido!</a>
+     <a class="linkWhats" href="https://wa.me/554991665420?text=Endeço:%20${end}%20Número da residência:%20${numero}%20 Total:${total}%20Pedido:%20${Array}">Envie seu pedido!</a>
     </div>
     <h4 class="linkexplica">Clicando acima, você vai enviar o pedido completo para o whats da Ki-delícia!</>
     </div><div id="overlay"></div>`

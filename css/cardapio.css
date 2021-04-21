@@ -524,10 +524,11 @@ html, body {
     } 
 }
 .irCarrinho{
-    margin-top: -100px;
+    margin-top: 200px;
     position: fixed;
     color: white;
     background-color: #41a3a7;
+    padding: 1px;
     border: none;
     border-radius: .3em;
     font-weight: bold;

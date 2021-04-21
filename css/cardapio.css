@@ -306,7 +306,7 @@ html, body {
 }
 @media screen and (max-width: 1200px) {
 .container{
-    transform:scale(0.68);
+    transform:scale(0.7);
     
 }
 }
@@ -533,14 +533,4 @@ html, body {
     border: none;
     border-radius: .3em;
     font-weight: bold;
-}
-@media screen and (max-width: 1200px)  {
-.mudar{
-    margin: 0px;
-    margin-top: 10px;
-    background-color: #1bf0ff94;
-    border: none;
-    border-radius: .3em;
-    font-weight: bold;
-}
 }

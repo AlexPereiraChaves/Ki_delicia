@@ -60,10 +60,8 @@ function addItemToCart(title, price, imageSrc) {
     <span class="cart-item-title">${title}</span>
 </div>
 <span class="cart-price cart-column">${price}</span>
-<label for="tosc"> <h4 class="mudar">mudar quantia</h4></label>
 <div class="cart-quantity cart-column">
     <input class="cart-quantity-input" id="tosc" type="number" value="1">
-    
     <button class="btn btn-danger" type="button">REMOVER</button>
 </div>`
     cartRow.innerHTML = cartRowContents

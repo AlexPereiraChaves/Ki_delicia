@@ -307,6 +307,10 @@ html, body {
 @media screen and (max-width: 1200px) {
 .container{
     transform:scale(0.7);
+    
+}
+.cart-price{
+    margin-right: 0px;
 }
 }
 .cart-item-image {
@@ -536,6 +540,10 @@ html, body {
 @media screen and (max-width: 1200px)  {
 .mudar{
     margin: 0px;
-    
+    margin-top: -2px;
+    background-color: #1bff2e60;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
 }
 }

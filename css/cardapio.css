@@ -537,7 +537,7 @@ html, body {
 @media screen and (max-width: 1200px)  {
 .mudar{
     margin: 0px;
-    margin-top: 5px;
+    margin-top: 10px;
     background-color: #1bf0ff94;
     border: none;
     border-radius: .3em;

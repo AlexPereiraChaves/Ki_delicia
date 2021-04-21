@@ -533,3 +533,9 @@ html, body {
     border-radius: .3em;
     font-weight: bold;
 }
+@media screen and (max-width: 1200px)  {
+.mudar{
+    margin: 0px;
+    
+}
+}

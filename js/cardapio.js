@@ -61,7 +61,9 @@ function addItemToCart(title, price, imageSrc) {
 </div>
 <span class="cart-price cart-column">${price}</span>
 <div class="cart-quantity cart-column">
-    <input class="cart-quantity-input" type="number" value="1">
+    <input class="cart-quantity-input" id="tosc" type="number" value="1">
+    <button onclick="menos()"
+                class="a">-</button><button onclick="mais()" class="b">+</button>
     <button class="btn btn-danger" type="button">REMOVER</button>
 </div>`
     cartRow.innerHTML = cartRowContents
@@ -117,13 +119,13 @@ function abrePopupPurchase(cartItems) {
     popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
     popup.getElementsByClassName('close-button')[1].addEventListener('click', removepopup)
 }
-function getInputValue(){
+function getInputValue() {
     var cartItemContainer = document.getElementsByClassName('cart-items')[0]
     console.log(cartItemContainer);
     var cartRows = cartItemContainer.getElementsByClassName('cart-row')
     var Array = [];
-    for(var i=0;i< cartRows.length;i++){
-      
+    for (var i = 0; i < cartRows.length; i++) {
+
         var cartRow = cartRows[i]
         var nameElement = cartRow.getElementsByClassName('cart-item-title')[0]
         var priceElement = cartRow.getElementsByClassName('cart-price')[0]
@@ -132,11 +134,11 @@ function getInputValue(){
         var price = priceElement.innerText;
         var quantity = quantityElement.value;
 
-        Array.push(nome,"Quantidade: ",quantity,"Preço: ",price);
+        Array.push(nome, "Quantidade: ", quantity, "Preço: ", price);
     }
     var precoTotal = document.getElementsByClassName('cart-total-price')[0];
     var total = precoTotal.innerText;
-    
+
 
     var popup = document.createElement('div')
     popup.classList.add('pop_up_title')
@@ -154,11 +156,11 @@ function getInputValue(){
     </div>
     <h4 class="linkexplica">Clicando acima, você vai enviar o pedido completo para o whats da Ki-delícia!</>
     </div><div id="overlay"></div>`
-    
+
     popup.innerHTML = htmldisplay
     cartItems.append(popup)
     popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
-   
+
 }
 function abrePopup(classe) {
     if (classe == "um") {

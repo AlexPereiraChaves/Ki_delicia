@@ -309,9 +309,6 @@ html, body {
     transform:scale(0.7);
     
 }
-.cart-price{
-    margin-right: 0px;
-}
 }
 .cart-item-image {
     width: 75px;

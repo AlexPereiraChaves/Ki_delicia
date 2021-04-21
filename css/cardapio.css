@@ -306,7 +306,7 @@ html, body {
 }
 @media screen and (max-width: 1200px) {
 .container{
-    transform:scale(0.7);
+    transform:scale(0.68);
     
 }
 }

@@ -62,8 +62,7 @@ function addItemToCart(title, price, imageSrc) {
 <span class="cart-price cart-column">${price}</span>
 <div class="cart-quantity cart-column">
     <input class="cart-quantity-input" id="tosc" type="number" value="1">
-    <button onclick="menos()"
-                class="a">-</button><button onclick="mais()" class="b">+</button>
+  
     <button class="btn btn-danger" type="button">REMOVER</button>
 </div>`
     cartRow.innerHTML = cartRowContents

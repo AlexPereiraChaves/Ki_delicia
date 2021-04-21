@@ -524,6 +524,7 @@ html, body {
     } 
 }
 .irCarrinho{
+    margin-top: -200px;
     position: fixed;
     color: white;
     background-color: #41a3a7;

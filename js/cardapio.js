@@ -394,9 +394,8 @@ queijo</h4>
                                         <button data-close-button class="close-button">Fechar janela &times;</button>
                                     </div>
                                     <div class="modal-body">
-                                    <h4>Trabalhamos com bolos diferentes todos os dias, por isso entre em contato no whats para receber informações dos bolos do dia!</h4>
-                                   
-                                    
+                                    <h4>Trabalhamos com bolos diferentes todos os dias! Por isso entre em contato no whats para receber informações dos bolos do dia clicando na imagem do whatsapp ou prossiga colocando no carrinho</h4>
+                                   <a href="https://wa.me/554991119174?text=Oi%20quero%20saber%20sobre%20os%20bolos%20do%20dia!"><img class="whatsapp" src="img/whatsapp.png"/></a>
                                   <section class=central>
                                     <img  class="modalimg" id="2" src="img/galeria/bolodechocolate620_3.jpg">
                                     </section>

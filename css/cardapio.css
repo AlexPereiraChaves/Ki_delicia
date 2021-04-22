@@ -550,6 +550,10 @@ html, body {
     border-bottom-right-radius: 10px;
     opacity: .4;
 }
+.whatsapp{
+    width: 50px;
+    height: 50px;
+}
 @media screen and (max-width: 1200px)  {
     .setas{
         margin: 0px;

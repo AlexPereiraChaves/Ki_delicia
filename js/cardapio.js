@@ -381,6 +381,40 @@ queijo</h4>
                                             cartItems.append(popup)
                                             popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
 
+                                        } else {
+                                            if (classe == "onze") {
+                                                var popup = document.createElement('div')
+                                                popup.classList.add('pop_up_title')
+                                                var cartItems = document.getElementsByClassName('popups')[0]
+
+                                                var newpopup = `
+                                            <div class="modal dois" id="modal">
+                                    <div class="modal-header">
+                                        <div class="title">Galeria de bolos!</div>
+                                        <button data-close-button class="close-button">Fechar janela &times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                    <h4>Trabalhamos com bolos diferentes todos os dias, por isso entre em contato no whats para receber informações dos bolos do dia!</h4>
+                                   
+                                    
+                                  <section class=central>
+                                    <img  class="modalimg" id="2" src="img/galeria/bolodechocolate620_3.jpg">
+                                    </section>
+                                    <section class=esquerdotopo id="esquerda"  onclick="passarImagem(id,'img/galeria/bolodechocolate620_3.jpg','img/galeria/1bd16b5b65ea2124db46d64e928ed29c.jpg','img/galeria/323619_original.jpg')">
+                                    <img class="setas" src="img/arrow_invert.png"  />
+                                  </section>
+                                    <section class="direitotopo">
+                                        <img src="img/arrow.png" id="direita" class="setas" onclick="passarImagem(id,'img/galeria/bolodechocolate620_3.jpg','img/galeria/1bd16b5b65ea2124db46d64e928ed29c.jpg','img/galeria/323619_original.jpg')"/>
+                                    </section>
+                                    </div>
+                                    </div>
+                                    <div id="overlay"></div>`
+
+                                                popup.innerHTML = newpopup
+                                                cartItems.append(popup)
+                                                popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+
+                                            }
                                         }
                                     }
                                 }
@@ -397,4 +431,40 @@ function removepopup(event) {
     var buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()
     document.getElementById('overlay').parentElement.remove()
+}
+var index = "b";
+function passarImagem(id, fotob, fotoa, fotoc) {
+
+    if (id == "esquerda" && index == "b") {
+        document.getElementById("2").src = fotoa;
+        index = "a"
+    } else {
+        if (id == "esquerda" && index == "a") {
+            document.getElementById("2").src = fotoc;
+            index = "c";
+        } else {
+            if (id == "esquerda" && index == "c") {
+                document.getElementById("2").src = fotob;
+                index = "b";
+            } else {
+                if (id == "direita" && index == "b") {
+                    var imga = document.getElementById("2")[0];
+                    console.log(imga)
+                    document.getElementById("2").src = fotoc;
+                    index = "c";
+                } else {
+                    if (id == "direita" && index == "c") {
+                        document.getElementById("2").src = fotoa;
+                        index = "a";
+                    } else {
+                        if (id == "direita" && index == "a") {
+                            document.getElementById("2").src = fotob;
+                            index = "b";
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }

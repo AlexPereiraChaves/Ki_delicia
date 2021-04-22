@@ -550,3 +550,22 @@ html, body {
     border-bottom-right-radius: 10px;
     opacity: .4;
 }
+@media screen and (max-width: 1200px)  {
+    .setas{
+        margin: 0px;
+        margin-right: 50px;
+        padding: 0px;
+        width: 60px;
+        height: 40px;
+        display: block;
+        float: right;
+        border: 8px solid rgba(61, 62, 85,.6);
+        box-shadow: 1px 1px 4px black;
+        background-color: rgba(61,62,85,.4);
+        position: relative;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        opacity: .4;
+    }  
+
+}

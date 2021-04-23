@@ -397,7 +397,7 @@ queijo</h4>
                                     <h4>Trabalhamos com bolos diferentes todos os dias! Por isso entre em contato no whats para receber informações dos bolos do dia clicando na imagem do whatsapp ou prossiga colocando no carrinho</h4>
                                    <a href="https://wa.me/554991119174?text=Oi%20quero%20saber%20sobre%20os%20bolos%20do%20dia!"><img class="whatsapp" src="img/whatsapp.png"/></a>
                                   <section class=central>
-                                    <img  class="modalimg slider-img"  src="img/galeria/a (15).jpeg">
+                                    <img  class="modalimg slider-img"  src="img/galeria/a (19).jpeg">
                                     </section>
                                     <section class=esquerdotopo id="esquerda" onclick="prev()" )">
                                     <img class="setas" src="img/arrow_invert.png"  />

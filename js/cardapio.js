@@ -397,13 +397,13 @@ queijo</h4>
                                     <h4>Trabalhamos com bolos diferentes todos os dias! Por isso entre em contato no whats para receber informações dos bolos do dia clicando na imagem do whatsapp ou prossiga colocando no carrinho</h4>
                                    <a href="https://wa.me/554991119174?text=Oi%20quero%20saber%20sobre%20os%20bolos%20do%20dia!"><img class="whatsapp" src="img/whatsapp.png"/></a>
                                   <section class=central>
-                                    <img  class="modalimg" id="2" src="img/galeria/bolodechocolate620_3.jpg">
+                                    <img  class="modalimg slider-img"  src="img/galeria/a (15).jpeg">
                                     </section>
-                                    <section class=esquerdotopo id="esquerda"  onclick="passarImagem(id,'img/galeria/bolodechocolate620_3.jpg','img/galeria/1bd16b5b65ea2124db46d64e928ed29c.jpg','img/galeria/323619_original.jpg')">
+                                    <section class=esquerdotopo id="esquerda" onclick="prev()" )">
                                     <img class="setas" src="img/arrow_invert.png"  />
                                   </section>
                                     <section class="direitotopo">
-                                        <img src="img/arrow.png" id="direita" class="setas" onclick="passarImagem(id,'img/galeria/bolodechocolate620_3.jpg','img/galeria/1bd16b5b65ea2124db46d64e928ed29c.jpg','img/galeria/323619_original.jpg')"/>
+                                        <img src="img/arrow.png" id="direita" class="setas"  onclick="next()" )"/>
                                     </section>
                                     </div>
                                     </div>
@@ -431,39 +431,24 @@ function removepopup(event) {
     buttonClicked.parentElement.parentElement.remove()
     document.getElementById('overlay').parentElement.remove()
 }
-var index = "b";
-function passarImagem(id, fotob, fotoa, fotoc) {
 
-    if (id == "esquerda" && index == "b") {
-        document.getElementById("2").src = fotoa;
-        index = "a"
-    } else {
-        if (id == "esquerda" && index == "a") {
-            document.getElementById("2").src = fotoc;
-            index = "c";
-        } else {
-            if (id == "esquerda" && index == "c") {
-                document.getElementById("2").src = fotob;
-                index = "b";
-            } else {
-                if (id == "direita" && index == "b") {
-                    var imga = document.getElementById("2")[0];
-                    console.log(imga)
-                    document.getElementById("2").src = fotoc;
-                    index = "c";
-                } else {
-                    if (id == "direita" && index == "c") {
-                        document.getElementById("2").src = fotoa;
-                        index = "a";
-                    } else {
-                        if (id == "direita" && index == "a") {
-                            document.getElementById("2").src = fotob;
-                            index = "b";
-                        }
-                    }
-                }
-            }
-        }
-    }
+var images = ['a (1).jpeg', 'a (2).jpeg', 'a (3).jpeg', 'a (4).jpeg','a (5).jpeg', 'a (6).jpeg', 'a (7).jpeg', 'a (8).jpeg','a (9).jpeg', 'a (10).jpeg', 'a (11).jpeg', 'a (12).jpeg','a (13).jpeg', 'a (14).jpeg', 'a (15).jpeg', 'a (16).jpeg',];
+var i = 0;
 
+function prev(){
+	if(i <= 0) i = images.length;	
+	i--;
+	return setImg();			 
+}
+
+function next(){
+	if(i >= images.length-1) i = -1;
+	i++;
+	return setImg();			 
+}
+
+function setImg(){
+    var slider_img = document.querySelector('.slider-img');
+	return slider_img.setAttribute('src', "img/galeria/"+images[i]);
+	
 }

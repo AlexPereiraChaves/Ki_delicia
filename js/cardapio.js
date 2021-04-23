@@ -432,7 +432,7 @@ function removepopup(event) {
     document.getElementById('overlay').parentElement.remove()
 }
 
-var images = ['a (1).jpeg', 'a (2).jpeg', 'a (3).jpeg', 'a (4).jpeg','a (5).jpeg', 'a (6).jpeg', 'a (7).jpeg', 'a (8).jpeg','a (9).jpeg', 'a (10).jpeg', 'a (11).jpeg', 'a (12).jpeg','a (13).jpeg', 'a (14).jpeg', 'a (15).jpeg', 'a (16).jpeg',];
+var images = ['a (1).jpeg', 'a (2).jpeg', 'a (3).jpeg', 'a (4).jpeg','a (5).jpeg', 'a (6).jpeg', 'a (7).jpeg', 'a (8).jpeg','a (9).jpeg', 'a (10).jpeg', 'a (11).jpeg', 'a (12).jpeg','a (13).jpeg', 'a (14).jpeg', 'a (15).jpeg', 'a (16).jpeg'];
 var i = 0;
 
 function prev(){

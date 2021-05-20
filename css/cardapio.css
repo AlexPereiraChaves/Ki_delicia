@@ -544,6 +544,17 @@ html, body {
     border-radius: .3em;
     font-weight: bold;
 }
+.topopagina{
+    bottom: 0;
+    position: fixed;
+    color: white;
+    background-color: #0de9e960;
+    padding: 10px;
+    margin-bottom: 38px;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
 .setas{
     margin: 0px;
     margin-right: 50px;

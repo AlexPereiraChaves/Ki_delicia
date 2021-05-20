@@ -94,14 +94,15 @@ p{
 
 
 .indenta{
-  background-color: rgba(0, 0, 0, 0.445);
+  background-color: rgba(0, 0, 0, 0.288);
+  border-radius: 3mm;
   width: 300px;
   height: auto;
 }
 .logo_tb{
   width: 300px;
   height: auto;
-  transform: scale(1.2);]
+  transform: scale(1.2);
   background-color: none;
 }
 

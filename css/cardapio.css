@@ -246,6 +246,9 @@ html, body {
 .shop-item-image {
     height: 250px;
 }
+.shop-item-image_bolo {
+    height: 250px;
+}
 
 .shop-item-details {
     display: flex;

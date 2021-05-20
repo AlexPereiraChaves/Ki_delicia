@@ -220,6 +220,12 @@ html, body {
     font-weight: bold;
     border-radius: .3em;
 }
+.btn-descricao_bolo{
+    background-color: #56CCF2;
+    border:  1px solid black;
+    font-weight: bold;
+    border-radius: .3em;
+}
 .btn-descricao:hover{
     background-color: #2D9CDB; 
 }

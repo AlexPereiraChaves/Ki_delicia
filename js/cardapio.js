@@ -20,6 +20,11 @@ function ready() {
         var button = addToCartButtons[i]
         button.addEventListener('click', addToCartClicked)
     }
+    var descriptionCartButtons = document.getElementsByClassName('btn-descricao')
+    for (var i = 0; i < descriptionCartButtons.length; i++) {
+        var button = descriptionCartButtons[i]
+        button.addEventListener('click', gerapopup)
+    }
 }
 function removeCartItem(event) {
     var buttonClicked = event.target
@@ -32,6 +37,33 @@ function quantityChanged(event) {
         input.value = 1
     }
     updateCartTotal()
+}
+function gerapopup(event){
+    var button = event.target
+    var shopItem = button.parentElement.parentElement
+    var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+    var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
+    var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+    
+    var popup = document.createElement('div')
+    popup.classList.add('pop_up_title')
+    var cartItems = document.getElementsByClassName('popups')[0]
+
+    var newpopup = `
+    <div class="modal um" id="modal">
+<div class="modal-header">
+<div class="title">${title}</div>
+<button data-close-button class="close-button">Fechar janela &times;</button>
+</div>
+<div class="modal-body 1">
+<h4>${price}</h4>
+<img class="modalimg" src="${imageSrc}">
+</div>
+</div>
+<div id="overlay"></div>`
+    popup.innerHTML = newpopup
+    cartItems.append(popup)
+    popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
 }
 function addToCartClicked(event) {
     var button = event.target

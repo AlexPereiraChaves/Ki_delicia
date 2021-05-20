@@ -90,19 +90,15 @@ p{
     margin-bottom: 20px;
     transition: 0.5s;
 }
-.esquerda :hover{
-  width: 102%;
-  box-shadow: 3px 3px 40px rgb(68, 38, 17);
-  margin-left: -6px;
-  }
+
 
 .indenta{
   background-color: rgba(0, 0, 0, 0.445);
   width: 300px;
-  height: 300px;
+  height: 500px;
 }
 .indenta img{
- 
+  transform:scale(0.8);
 }
 
 .efeito_foot{

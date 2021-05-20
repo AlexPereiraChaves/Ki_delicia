@@ -118,12 +118,12 @@ p{
     margin-bottom: 20px;
     transition: 0.5s;
 }
-.esquerda :hover{
+/*.esquerda :hover{
   width: 101%;
   margin-right: 40px;
   box-shadow: 3px 3px 40px rgb(68, 38, 17);
   margin-left: 0px;
-}
+}*/
 .efeito_foot{
   width: 95%;
   background-color: #201C17;
@@ -144,4 +144,9 @@ p{
 
 
 
-
+.indenta{
+  background-color: rgba(0, 0, 0, 0.288);
+  border-radius: 3mm;
+  width: 300px;
+  height: auto;
+}

@@ -445,6 +445,11 @@
                 scrollTop: $("#anchor").offset().top
             }, 2000);
         });
+        $(".topopagina").click(function () {
+            $('html, body').animate({
+                scrollTop: $("#anchor_dois").offset().top
+            }, 2000);
+        });
         $('.list').click(function () {
             $(this).addClass('active').siblings().removeClass('active')
         })

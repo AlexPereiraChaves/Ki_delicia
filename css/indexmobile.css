@@ -98,8 +98,11 @@ p{
   width: 300px;
   height: auto;
 }
-.indenta img{
-
+.logo_tb{
+  width: 300px;
+  height: auto;
+  transform: scale(1.2);]
+  background-color: none;
 }
 
 .efeito_foot{
@@ -115,5 +118,3 @@ p{
   font-size: 8px;
   text-align: center;
 }
-
-

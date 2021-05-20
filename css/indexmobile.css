@@ -95,6 +95,14 @@ p{
   box-shadow: 3px 3px 40px rgb(68, 38, 17);
   margin-left: -6px;
   }
+
+.indenta{
+  background-color: rgba(0, 0, 0, 0.445);
+}
+.indenta img{
+  transform:scale(0.5);
+}
+
 .efeito_foot{
   width: 94%;
   background-color: #201C17;

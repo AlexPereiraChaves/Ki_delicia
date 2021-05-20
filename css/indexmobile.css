@@ -18,6 +18,7 @@ p{
   color: #ffffff;
   font-family: arial,sans-serif;
   text-indent: 10px;
+  text-align: center;
 }
 .interface{
     
@@ -95,10 +96,10 @@ p{
 .indenta{
   background-color: rgba(0, 0, 0, 0.445);
   width: 300px;
-  height: 500px;
+  height: auto;
 }
 .indenta img{
-  transform:scale(0.8);
+
 }
 
 .efeito_foot{

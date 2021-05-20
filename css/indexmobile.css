@@ -98,9 +98,11 @@ p{
 
 .indenta{
   background-color: rgba(0, 0, 0, 0.445);
+  width: 300px;
+  height: 300px;
 }
 .indenta img{
-  transform:scale(0.5);
+ 
 }
 
 .efeito_foot{

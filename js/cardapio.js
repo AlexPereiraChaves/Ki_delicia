@@ -148,7 +148,7 @@ function mudaTitulo(event) {
 
         var newpopup = `<div class='modal'>
       <button data-close-button class="close-button">Fechar janela &times;</button>
-      <p>ATENÇÂO! apenas digite o preço e com ponto apenas! exemplo: 3.50 ou 2.50, nunca coloque R$ ou espaço ou virgula ex: R$ 22,0. escrever assim vai acarretar em erro tendo que ser mudado novamete o preço do produto<p>
+      <p>ATENÇÂO! apenas digite o preço, e com ponto apenas, não com vírgula! exemplo: 3.50 ou 2.50. Nunca coloque R$ ou espaços ex: R$ 22,0. escrever assim vai acarretar em erro, o sistema não informa do erro, tendo que ser mudado novamente o preço do produto<p>
       <Input type="text" id='valor' placeholder="Digite o valor"></Input>
       <button id='${elemento}' class='submit'>Submit</button>
       </div>`
@@ -259,11 +259,11 @@ function addToCartClicked(event) {
 
     var newpopup = `<div class='modal'>
   <button data-close-button class="close-button">Fechar janela &times;</button>
-  <p>${title}</p><img class="cart-item-image" src='${imageSrc}'/> 
-  <p>Escolha a quantidade:</p>
-  <input class="cart-quantity-input" id="${price}" type="number" value="1">
-  <p>Valor por unidade:<span class='valorfixo'>${price}</span> Total: </p> <span class="precounico">${price}</span>
-  <button id='${title}' class='submit'>Submit</button>
+  <p class='textoquantidade'>${title}</p><img class="cart-item-image inputdocartantes" src='${imageSrc}'/> 
+  <p class='textoquantidade'>Escolha a quantidade(aperte no quadrado abaixo):</p>
+  <input class="cart-quantity-input  inputdocartantes" id="${price}" type="number" value="1">
+  <p class='textoquantidade'>Valor por unidade:<span class='valorfixo'>${price}</span> Total: </p> <span class="precounico precovalorunico">${price}</span>
+  <br><button id='${title}' class='submit paracolocar'>Colocar quantidade no carrinho</button>
   </div>`
     popup.innerHTML = newpopup
     cartItems.append(popup)

@@ -603,3 +603,28 @@ input[type=number]::-webkit-outer-spin-button {
    opacity: 1;
 
 }
+/* costumização infos de login*/ 
+
+.sair{
+    bottom: 0;
+    position: fixed;
+    color: white;
+    background-color: #0de9e960;
+    padding: 10px;
+    margin-bottom: 38px;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+.logando{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    color: white;
+    background-color: #0de9e960;
+    padding: 10px;
+    margin-bottom: 38px;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}

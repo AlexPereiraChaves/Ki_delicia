@@ -1,3 +1,80 @@
+var firebaseConfig = {
+    apiKey: "AIzaSyAJXNHxn37rxJj9hdDjd5nUpleIxw1Upnw",
+    authDomain: "testesapp-1bf35.firebaseapp.com",
+    projectId: "testesapp-1bf35",
+    storageBucket: "testesapp-1bf35.appspot.com",
+    messagingSenderId: "728227895920",
+    appId: "1:728227895920:web:69359dc7b73915798a72b5"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+function abreLogin() {
+    var popup = document.createElement('div')
+    popup.classList.add('pop_up_title')
+    var cartItems = document.getElementsByClassName('popups')[0]
+
+    var newpopup = `<div class='modal'>
+    <button data-close-button class="close-button">Fechar janela &times;</button>
+    <div>
+    <input id="login" type="text" placeholder="insira o e-mail">
+    <input id="senha" type="text" placeholder="insira a senha">
+    <button id="submit" class="submit" >Submit</button>
+    </div>
+    </div>`
+    popup.innerHTML = newpopup
+    cartItems.append(popup)
+    popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopupSimples)
+    popup.getElementsByClassName('submit')[0].addEventListener('click', signUpUser)
+
+}
+
+function signUpUser(event) {
+    const email = document.getElementById('login'),
+        pword = document.getElementById('senha');
+    firebase.auth().signInWithEmailAndPassword(email.value, pword.value)
+        .then((userCredential) => {
+
+            user = userCredential.user;
+            var lin = document.createElement('div')
+            var linkPagcriador = ` <button class='logando'>Logando como ${user.email}! seja bem-vindo Ki-delicia! um momento por favor!</button>`
+            lin.innerHTML = linkPagcriador;
+            var ondevai = document.getElementsByClassName('popups')[0]
+            ondevai.append(lin);
+            //lin.getElementsByClassName('sair')[0].addEventListener('click', sairConta)
+            setTimeout(function () { document.location.reload(true);; }, 3000);
+
+        })
+        .catch((error) => {
+            alert('informação errada, por favor, tente novamente');
+            var errorCode = error.code;
+            var errorMessage = error.message;
+        });
+    var buttonClicked = event.target
+    buttonClicked.parentElement.parentElement.remove()
+}
+
+function sairConta(event) {
+    var buttonClicked = event.target
+    buttonClicked.parentElement.remove()
+    firebase.auth().signOut();
+    chave = null;
+}
+
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        chave = 'chave';
+        var lin = document.createElement('div')
+        var linkPagcriador = ` <button class='sair'>Logado com ${user.email}! Para sair da conta clique aqui!</button>`
+        lin.innerHTML = linkPagcriador;
+        var ondevai = document.getElementsByClassName('popups')[0]
+        ondevai.append(lin);
+        lin.getElementsByClassName('sair')[0].addEventListener('click', sairConta)
+    }
+});
+
+
+//---------término do login/ início do cardápio----------------------//
 if (document.readyState == 'loading') {
     document.addEventListener('DOMContentLoaded', ready)
 } else {
@@ -5,6 +82,7 @@ if (document.readyState == 'loading') {
 }
 
 function ready() {
+
     var removeCartItemButtons = document.getElementsByClassName('btn-danger')
     for (var i = 0; i < removeCartItemButtons.length; i++) {
         var button = removeCartItemButtons[i]
@@ -30,7 +108,76 @@ function ready() {
         var button = descriptionimage[i]
         button.addEventListener('click', gerapopupbyimg)
     }
+    callValue();
 }
+var chave;
+function callValue() {
+
+    db.collection('post').onSnapshot(function (data) {
+
+        data.docs.map(function (val) {
+            var tituloPost = val.data().name;
+            var idpost = val.data().id;
+            var lin = document.createElement('div')
+            var linkPagcriador = `<span  id='${idpost}' class="shop-item-price" onclick="carregaParaMudar()">${tituloPost}</span> `
+            lin.innerHTML = linkPagcriador;
+            var nomelocal = document.getElementsByClassName(idpost)[0]
+            nomelocal.append(lin);
+
+        })
+    })
+
+}
+
+function carregaParaMudar() {
+    if (chave != null) {
+        var descriptionCartButtons = document.getElementsByClassName('shop-item-price')
+        for (var i = 0; i < descriptionCartButtons.length; i++) {
+            var button = descriptionCartButtons[i]
+            button.addEventListener('click', mudaTitulo)
+        }
+    }
+}
+
+function mudaTitulo(event) {
+    var elemento = event.target.id;
+    if (chave != null) {
+        var popup = document.createElement('div')
+        popup.classList.add('pop_up_title')
+        var cartItems = document.getElementsByClassName('popups')[0]
+
+        var newpopup = `<div class='modal'>
+      <button data-close-button class="close-button">Fechar janela &times;</button>
+      <p>ATENÇÂO! apenas digite o preço e com ponto apenas! exemplo: 3.50 ou 2.50, nunca coloque R$ ou espaço ou virgula ex: R$ 22,0. escrever assim vai acarretar em erro tendo que ser mudado novamete o preço do produto<p>
+      <Input type="text" id='valor' placeholder="Digite o valor"></Input>
+      <button id='${elemento}' class='submit'>Submit</button>
+      </div>`
+        popup.innerHTML = newpopup
+        cartItems.append(popup)
+        popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopupSimples)
+        popup.getElementsByClassName('submit')[0].addEventListener('click', alteraValor)
+    }
+}
+
+function alteraValor(event) {
+    var valorID = event.target.id;
+    var citiesRef = db.collection("post");
+    var valortexto = document.getElementById('valor').value;
+    var finalValor = 'R$' + valortexto;
+    citiesRef.doc(valorID).set({
+        name: finalValor,
+        id: valorID
+    });
+    setTimeout(function () { document.location.reload(true);; }, 2000);
+    var buttonClicked = event.target
+    buttonClicked.parentElement.parentElement.remove()
+    var lin = document.createElement('div')
+    var linkPagcriador = ` <button class='logando'>Aplicando alterações! um momento por favor!</button>`
+    lin.innerHTML = linkPagcriador;
+    var ondevai = document.getElementsByClassName('popups')[0]
+    ondevai.append(lin);
+}
+
 function removeCartItem(event) {
     var buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()
@@ -70,7 +217,7 @@ function gerapopup(event) {
     cartItems.append(popup)
     popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
 }
-function gerapopupbyimg (event){
+function gerapopupbyimg(event) {
     var button = event.target
     var shopItem = button.parentElement
     var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
@@ -97,14 +244,61 @@ function gerapopupbyimg (event){
     cartItems.append(popup)
     popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
 }
+//((((((((((((((((((((((((((((((((((((((((((((((((((((((()))))))))))))))))))))))))))))))))))))))))))))))))))))))
 function addToCartClicked(event) {
     var button = event.target
     var shopItem = button.parentElement.parentElement
     var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
     var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+
+
+    var popup = document.createElement('div')
+    popup.classList.add('pop_up_title')
+    var cartItems = document.getElementsByClassName('popups')[0]
+
+    var newpopup = `<div class='modal'>
+  <button data-close-button class="close-button">Fechar janela &times;</button>
+  <p>${title}</p><img class="cart-item-image" src='${imageSrc}'/> 
+  <p>Escolha a quantidade:</p>
+  <input class="cart-quantity-input" id="tosc" type="number" value="1">
+  <p>Valor: </p>
+  <button id='${title}' class='submit'>Submit</button>
+  </div>`
+    popup.innerHTML = newpopup
+    cartItems.append(popup)
+    popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopupSimples)
+    popup.getElementsByClassName('submit')[0].addEventListener('click', quantidadeDesejada)
+
+
     addItemToCart(title, price, imageSrc)
-    updateCartTotal()
+
+}
+function quantidadeDesejada(event) {
+    var button = event.target
+    var shopItem = button.parentElement.parentElement
+    var tituloAtual = event.target.id;
+    var quantidade = shopItem.getElementsByClassName('cart-quantity-input')[0].value;
+
+    
+    var shopcart = document.getElementsByClassName('cart-items')[0];
+    var cartitemTitle = shopcart.getElementsByClassName('cart-item-title')
+    for (var i = 0; i < cartitemTitle.length; i++) {
+        if (cartitemTitle[i].innerText == tituloAtual) {
+            var shopdoValor = cartitemTitle[i].innerText;
+         
+            var input = document.getElementsByClassName('cart-quantity-input '+tituloAtual)[0];
+            if (isNaN(quantidade) || quantidade <= 0) {
+                input.value = 1
+                updateCartTotal()
+            }else{
+                input.value = quantidade;
+                updateCartTotal()
+            }
+          shopItem.remove()
+        }
+    }
+   
 }
 
 function addItemToCart(title, price, imageSrc) {
@@ -112,6 +306,7 @@ function addItemToCart(title, price, imageSrc) {
     cartRow.classList.add('cart-row')
     var cartItems = document.getElementsByClassName('cart-items')[0]
     var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+
     alert('Adicionado no carrinho!')
     for (var i = 0; i < cartItemNames.length; i++) {
         if (cartItemNames[i].innerText == title) {
@@ -125,14 +320,15 @@ function addItemToCart(title, price, imageSrc) {
 </div>
 <span class="cart-price cart-column">${price}</span>
 <div class="cart-quantity cart-column">
-    <input class="cart-quantity-input" id="tosc" type="number" value="1">
+    <input class="cart-quantity-input ${title}" id="tosc" type="number" value="1">
     <button class="btn btn-danger" type="button">REMOVER</button>
 </div>`
     cartRow.innerHTML = cartRowContents
     cartItems.append(cartRow)
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
-    
+    updateCartTotal()
+
 }
 
 function updateCartTotal() {
@@ -265,7 +461,10 @@ function removepopup(event) {
     buttonClicked.parentElement.parentElement.remove()
     document.getElementById('overlay').parentElement.remove()
 }
-
+function removepopupSimples(event) {
+    var buttonClicked = event.target
+    buttonClicked.parentElement.remove()
+}
 var images = ['a (1).jpeg', 'a (2).jpeg', 'a (17).jpeg', 'a (3).jpeg', 'a (29).jpeg', 'a (18).jpeg', 'a (4).jpeg', 'a (5).jpeg', 'a (6).jpeg', 'a (31).jpeg', 'a (7).jpeg', 'a (8).jpeg', 'a (9).jpeg', 'a (10).jpeg', 'a (11).jpeg', 'a (12).jpeg', 'a (13).jpeg', 'a (14).jpeg', 'a (15).jpeg', 'a (16).jpeg'];
 var i = 0;
 

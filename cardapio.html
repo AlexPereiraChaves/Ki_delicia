@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="css/indexmobile.css" media="screen and (max-width:1280px)">
     <link rel="stylesheet" href="css/index.css" media="screen and (min-width:1281px)">
     <link rel="stylesheet" href="css/cardapio.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
     <script language=javascript src="js/cardapio.js" async>
     </script>
 
@@ -39,6 +45,7 @@
         </div>
         <section class="shop">
 
+            
             <div class="product">
                 <div class="pop_up_title"></div>
                 <div class="popups"></div>
@@ -46,8 +53,8 @@
                     <span class="shop-item-title">Bolinha de queijo</span>
                     <img class="shop-item-image" src="img/galeria/bolinha_de_queijo-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('um')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.50</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Bolinha de queijo"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -55,8 +62,8 @@
                     <span class="shop-item-title">Bolinha de carne</span>
                     <img class="shop-item-image" src="img/galeria/bolinho_de_carne-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('dois')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.49</span>
+                        <button class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Bolinha de carne"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -64,8 +71,8 @@
                     <span class="shop-item-title">Mini brioche de frango e requeijão</span>
                     <img class="shop-item-image" src="img/galeria/brioche_de_frango-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('tres')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.80</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Mini brioche de frango e requeijão"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -73,8 +80,8 @@
                     <span class="shop-item-title">Mini brioche de presunto queijo</span>
                     <img class="shop-item-image" src="img/galeria/brioche_de_pq-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('quatro')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.90</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Mini brioche de presunto queijo"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -82,8 +89,8 @@
                     <span class="shop-item-title">Mini brioche de salsicha</span>
                     <img class="shop-item-image" src="img/galeria/bruno_he_de_salsicha-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('cinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.80</span>
+                        <button class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Mini brioche de salsicha"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -91,8 +98,8 @@
                     <span class="shop-item-title">Orelha de gato com açúcar</span>
                     <img class="shop-item-image" src="img/galeria/orelha_gato_acucar.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('cinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.60</span>
+                        <button class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Orelha de gato com açúcar"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -100,8 +107,8 @@
                     <span class="shop-item-title">Orelha de gato sem açúcar</span>
                     <img class="shop-item-image" src="img/galeria/orelha_gato_sem_acucar.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('cinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.60</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Orelha de gato sem açúcar"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -109,8 +116,8 @@
                     <span class="shop-item-title">Orelha crescida com açúcar</span>
                     <img class="shop-item-image" src="img/galeria/gato_crescido_acucar.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('cinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.60</span>
+                        <button class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Orelha crescida com açúcar"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -118,8 +125,8 @@
                     <span class="shop-item-title">Orelha crescida sem açúcar</span>
                     <img class="shop-item-image" src="img/galeria/gato_crescido.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('cinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.60</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Orelha crescida sem açúcar"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -127,8 +134,8 @@
                     <span class="shop-item-title">Sonho recheado com doce de leite</span>
                     <img class="shop-item-image" src="img/galeria/sonhoReche.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('cinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$2.50</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Sonho recheado com doce de leite"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -136,8 +143,8 @@
                     <span class="shop-item-title">Carolina recheada com chocolate ao leite</span>
                     <img class="shop-item-image" src="img/galeria/carolina.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('cinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$1.50</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Carolina recheada com chocolate ao leite"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -145,8 +152,8 @@
                     <span class="shop-item-title">Bijajica</span>
                     <img class="shop-item-image" src="img/galeria/bijajica.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('cinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$1.99</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Bijajica"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -154,8 +161,8 @@
                     <span class="shop-item-title">Bananinha com doce de leite</span>
                     <img class="shop-item-image" src="img/galeria/bananinha.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('cinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$2.50</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Bananinha com doce de leite"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -163,17 +170,17 @@
                     <span class="shop-item-title">Brigadeiro</span>
                     <img class="shop-item-image" src="img/galeria/brigadeiro.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('cinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$3.99</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Brigadeiro"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
                 <div class="itembox doces">
                     <span class="shop-item-title">Beijinho</span>
-                    <img class="shop-item-image" src="img/galeria/.jpeg">
+                    <img class="shop-item-image" src="">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('cinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$3.99</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Beijinho"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -181,8 +188,8 @@
                     <span class="shop-item-title">Bolo de chocolate</span>
                     <img class="shop-item-image" src="img/galeria/boloChoch.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('cinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$14.99</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Bolo de chocolate"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -190,8 +197,8 @@
                     <span class="shop-item-title">Bolo de cenoura</span>
                     <img class="shop-item-image" src="img/galeria/cenoura.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('cinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$14.99</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Bolo de cenoura"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -199,8 +206,8 @@
                     <span class="shop-item-title">Bolo de maçã e canela</span>
                     <img class="shop-item-image" src="img/galeria/canelaMaça.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('cinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$14.99</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Bolo de maçã e canela"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -208,8 +215,8 @@
                     <span class="shop-item-title">Bolo de fubá</span>
                     <img class="shop-item-image" src="img/galeria/laranjaEfuba.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('cinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$14.99</span>
+                        <button class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Bolo de fubá"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -217,8 +224,8 @@
                     <span class="shop-item-title">Bolo de laranja</span>
                     <img class="shop-item-image" src="img/galeria/laranjaEfuba.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('cinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$14.99</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Bolo de laranja"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -227,7 +234,7 @@
                     <img class="shop-item-image" src="img/galeria/chineleinho_de_pq-min.jpeg">
                     <div class="shop-item-details">
                         <button class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$3.99</span>
+                        <span class="Chinelinho de presunto e queijo"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -235,8 +242,8 @@
                     <span class="shop-item-title">Chinelinho de bacon</span>
                     <img class="shop-item-image" src="img/galeria/chinelinho_bacon-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('sete')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$3.99</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Chinelinho de bacon"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -244,8 +251,8 @@
                     <span class="shop-item-title">Chinelinho de salsicha</span>
                     <img class="shop-item-image" src="img/galeria/chinelinho_de_salsicha-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('oito')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$4.49</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Chinelinho de salsicha"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -253,8 +260,8 @@
                     <span class="shop-item-title">Chinelinho de frango</span>
                     <img class="shop-item-image" src="img/galeria/chinelinho_frango-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('nove')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$3.99</span>
+                        <button class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Chinelinho de frango"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -262,8 +269,8 @@
                     <span class="shop-item-title">Coxinha</span>
                     <img class="shop-item-image" src="img/galeria/coxinha-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('dez')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$4.99</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Coxinha"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -272,7 +279,7 @@
                     <img class="shop-item-image_bolo" src="img/galeria/a (19).jpeg">
                     <div class="shop-item-details">
                         <button onclick="abrePopup('onze')" class="btn btn-descricao_bolo boloDescricao">VER GALERIA</button>
-                        <span class="shop-item-price">R$00.00</span>
+                        <span class="Bolos do dia galeria"></span>
                         <button class="btn btn-primary shop-item-button" onclick="alert('POR FAVOR, leia a descrição!')" type="button">COLOCAR NO CARRINHO </button>
                     </div>
                 </div>
@@ -280,8 +287,8 @@
                     <span class="shop-item-title">Hambúrgão</span>
                     <img class="shop-item-image" src="img/galeria/hamburgao-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('doze')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$7.99</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Hambúrgão"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -289,8 +296,8 @@
                     <span class="shop-item-title">Joelho de carne e ovo</span>
                     <img class="shop-item-image" src="img/galeria/joelho_de_carne-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('treze')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$4.99</span>
+                        <button class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Joelho de carne e ovo"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -298,8 +305,8 @@
                     <span class="shop-item-title">Joelho de frango</span>
                     <img class="shop-item-image" src="img/galeria/joelho_de_frango-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('quartoze')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$4.99</span>
+                        <button class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Joelho de frango"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -307,8 +314,8 @@
                     <span class="shop-item-title">Joelho de frango(reptido)</span>
                     <img class="shop-item-image" src="img/galeria/joelho_frango-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('quinze')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$4.99</span>
+                        <button class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Joelho de frango(reptido)"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -316,8 +323,8 @@
                     <span class="shop-item-title">Joelho de tomate cebola</span>
                     <img class="shop-item-image" src="img/galeria/joelho_tomate_cebola-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('dezesseis')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$4.99</span>
+                        <button class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Joelho de tomate cebola"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -325,8 +332,8 @@
                     <span class="shop-item-title">Mini coxinha</span>
                     <img class="shop-item-image" src="img/galeria/mini_coxinha-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('dezessete')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.49</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Mini coxinha"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -334,8 +341,8 @@
                     <span class="shop-item-title">Mini Pastelzinho</span>
                     <img class="shop-item-image" src="img/galeria/mini_pastelzinho-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('dezoito')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.65</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Mini Pastelzinho"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -343,8 +350,8 @@
                     <span class="shop-item-title">Mini pizza aberta de frango e calabresa</span>
                     <img class="shop-item-image" src="img/galeria/mini_pizza_aberta-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('dezenove')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$1.99</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Mini pizza aberta de frango e calabresa"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -352,8 +359,8 @@
                     <span class="shop-item-title">Mini pizza enrrolada presunto e queijo</span>
                     <img class="shop-item-image" src="img/galeria/mini_pizza_enrolada-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('vinte')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.99</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Mini pizza enrrolada presunto e queijo"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -361,8 +368,8 @@
                     <span class="shop-item-title">Mini pizza enrrolada de frango</span>
                     <img class="shop-item-image" src="img/galeria/Mini pizza enrrolada de frango.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('vinteum')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.99</span>
+                        <button class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Mini pizza enrrolada de frango"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -370,8 +377,8 @@
                     <span class="shop-item-title">Mini risoles de presunto e queijo</span>
                     <img class="shop-item-image" src="img/galeria/mini_risoles-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('vintedois')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.40</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Mini risoles de presunto e queijo"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -379,8 +386,8 @@
                     <span class="shop-item-title">Mini risoles de frango</span>
                     <img class="shop-item-image" src="img/galeria/mini_risoles-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('vintetres')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.40</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Mini risoles de frango"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -388,8 +395,8 @@
                     <span class="shop-item-title">Mini risoles de carne</span>
                     <img class="shop-item-image" src="img/galeria/mini_risoles-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('vintequatro')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.40</span>
+                        <button class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Mini risoles de carne"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -397,8 +404,8 @@
                     <span class="shop-item-title">Mini salsicha enrolada</span>
                     <img class="shop-item-image" src="img/galeria/mini_salsicha-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('vintecinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.49</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Mini salsicha enrolada"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -406,8 +413,8 @@
                     <span class="shop-item-title">Mini pão de queijo</span>
                     <img class="shop-item-image" src="img/galeria/pao_de_queijo-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('vinteseis')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.70</span>
+                        <button class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Mini pão de queijo"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -415,8 +422,8 @@
                     <span class="shop-item-title">Pastel de carne e queijo</span>
                     <img class="shop-item-image" src="img/galeria/pasteis-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('vinteoito')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$5.99</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Pastel de carne e queijo"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -424,8 +431,8 @@
                     <span class="shop-item-title">Pastel de carne</span>
                     <img class="shop-item-image" src="img/galeria/pasteis-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('vintenove')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$4.99</span>
+                        <button class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Pastel de Carne"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -433,8 +440,8 @@
                     <span class="shop-item-title">Pastel de carne queijo e ovo</span>
                     <img class="shop-item-image" src="img/galeria/pasteis-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('trinta')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$6.99</span>
+                        <button class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Pastel de carne queijo e ovo"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -442,8 +449,8 @@
                     <span class="shop-item-title">Pastel de frango e requeijão</span>
                     <img class="shop-item-image" src="img/galeria/pasteis-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('trintaum')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$5.99</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Pastel de frango e requeijão"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -451,8 +458,8 @@
                     <span class="shop-item-title">Risoles de frango</span>
                     <img class="shop-item-image" src="img/galeria/risoles-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('trintadois')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$4.99</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Risoles de frango"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -460,8 +467,8 @@
                     <span class="shop-item-title">Risoles de carne</span>
                     <img class="shop-item-image" src="img/galeria/risoles-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('trintatres')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$4.99</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Risoles de carne"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -469,8 +476,8 @@
                     <span class="shop-item-title">Risoles de presunto e queijo</span>
                     <img class="shop-item-image" src="img/galeria/risoles-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('trintaquatro')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$4.99</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Risoles de presunto e queijo"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -478,8 +485,8 @@
                     <span class="shop-item-title">Salsicha empanada</span>
                     <img class="shop-item-image" src="img/galeria/salsicha_empanad-min.jpeg">
                     <div class="shop-item-details">
-                        <button onclick="abrePopup('trintacinco')" class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$3.50</span>
+                        <button  class="btn btn-descricao">DESCRIÇÃO</button>
+                        <span class="Salsicha empanada"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -488,7 +495,7 @@
                     <img class="shop-item-image" src="img/galeria/salsicha_frita_massa_de_pastel-min.jpeg">
                     <div class="shop-item-details">
                         <button  class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$2.99</span>
+                        <span class="Salsicha enrolada massa de pastel"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -497,7 +504,7 @@
                     <img class="shop-item-image" src="img/galeria/espetinho_de_frango.jpeg">
                     <div class="shop-item-details">
                         <button class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$4.99</span>
+                        <span class="Espetinho de frango"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -506,7 +513,7 @@
                     <img class="shop-item-image" src="img/galeria/veio_he_de_pq-min.jpeg">
                     <div class="shop-item-details">
                         <button  class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.80</span>
+                        <span class="Mini brioche de presunto e queijo"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -515,7 +522,7 @@
                     <img class="shop-item-image" src="img/galeria/Empadão de frango.jpeg">
                     <div class="shop-item-details">
                         <button  class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$7.99</span>
+                        <span class="Fatia de empadão de frango"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -524,7 +531,7 @@
                     <img class="shop-item-image" src="img/galeria/envelope.jpeg">
                     <div class="shop-item-details">
                         <button class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$4.99</span>
+                        <span class="Envelope de Frango"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -533,7 +540,7 @@
                     <img class="shop-item-image" src="img/galeria/paoIntegral.jpeg">
                     <div class="shop-item-details">
                         <button class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$7.50</span>
+                        <span class="Pão integral"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -542,7 +549,7 @@
                     <img class="shop-item-image" src="img/galeria/paoHotDog.jpeg">
                     <div class="shop-item-details">
                         <button class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$4.50</span>
+                        <span class="Pão hot dog"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -551,7 +558,7 @@
                     <img class="shop-item-image" src="img/galeria/paoCaseiro.jpeg">
                     <div class="shop-item-details">
                         <button class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$4.50</span>
+                        <span class="Pão caseiro"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -560,7 +567,7 @@
                     <img class="shop-item-image" src="img/galeria/paoLeite.jpeg">
                     <div class="shop-item-details">
                         <button class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$4.50</span>
+                        <span class="Pão de leite"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -569,7 +576,7 @@
                     <img class="shop-item-image" src="img/galeria/paoMilho.jpeg">
                     <div class="shop-item-details">
                         <button class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$6</span>
+                        <span class="Pão de milho"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -578,7 +585,7 @@
                     <img class="shop-item-image" src="img/galeria/paoSanduiche.jpeg">
                     <div class="shop-item-details">
                         <button class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$4.50</span>
+                        <span class="Pão de sanduíche"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -587,7 +594,7 @@
                     <img class="shop-item-image" src="img/galeria/paoFrances.jpeg">
                     <div class="shop-item-details">
                         <button class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.70</span>
+                        <span class="Pão francês"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -596,7 +603,7 @@
                     <img class="shop-item-image" src="img/galeria/paoFrances.jpeg">
                     <div class="shop-item-details">
                         <button class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.70</span>
+                        <span class="Pão italiano"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -605,7 +612,7 @@
                     <img class="shop-item-image" src="img/galeria/paoSovado.jpeg">
                     <div class="shop-item-details">
                         <button class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$0.99</span>
+                        <span class="Pão sovado patinha"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -614,7 +621,7 @@
                     <img class="shop-item-image" src="img/galeria/paodex.jpeg">
                     <div class="shop-item-details">
                         <button class="btn btn-descricao">DESCRIÇÃO</button>
-                        <span class="shop-item-price">R$4.50</span>
+                        <span class="Pão de x"></span>
                         <button class="btn btn-primary shop-item-button" type="button">COLOCAR NO CARRINHO</button>
                     </div>
                 </div>
@@ -647,7 +654,7 @@
             <div class="efeito_foot">
                 <p>d</p>
             </div>
-            <P>© copyright 2021 | Todos os direitos reservados | também nas redes sociais:</P>
+            <P onclick="abreLogin()">© copyright 2021 | Todos os direitos reservados | Clique aqui para Logar:</P>
         </footer>
 
     </div>

@@ -141,6 +141,7 @@ function carregaParaMudar() {
 
 function mudaTitulo(event) {
     var elemento = event.target.id;
+    
     if (chave != null) {
         var popup = document.createElement('div')
         popup.classList.add('pop_up_title')
@@ -148,9 +149,10 @@ function mudaTitulo(event) {
 
         var newpopup = `<div class='modal'>
       <button data-close-button class="close-button">Fechar janela &times;</button>
-      <p>ATENÇÂO! apenas digite o preço, e com ponto apenas, não com vírgula! exemplo: 3.50 ou 2.50. Nunca coloque R$ ou espaços ex: R$ 22,0. escrever assim vai acarretar em erro, o sistema não informa do erro, tendo que ser mudado novamente o preço do produto<p>
+      <p class='letrasnormais'>Você está alterando o valor do item: ${elemento}</p>
+      <p  class='letrasnormais'>ATENÇÂO! apenas digite o preço, e com ponto apenas, não com vírgula! exemplo: 3.50 ou 2.50. Nunca coloque R$ <p>
       <Input type="text" id='valor' placeholder="Digite o valor"></Input>
-      <button id='${elemento}' class='submit'>Submit</button>
+      <button id='${elemento}' class='submit'>Confirmar</button>
       </div>`
         popup.innerHTML = newpopup
         cartItems.append(popup)

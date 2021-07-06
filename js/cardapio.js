@@ -261,18 +261,35 @@ function addToCartClicked(event) {
   <button data-close-button class="close-button">Fechar janela &times;</button>
   <p>${title}</p><img class="cart-item-image" src='${imageSrc}'/> 
   <p>Escolha a quantidade:</p>
-  <input class="cart-quantity-input" id="tosc" type="number" value="1">
-  <p>Valor: </p>
+  <input class="cart-quantity-input" id="${price}" type="number" value="1">
+  <p>Valor por unidade:<span class='valorfixo'>${price}</span> Total: </p> <span class="precounico">${price}</span>
   <button id='${title}' class='submit'>Submit</button>
   </div>`
     popup.innerHTML = newpopup
     cartItems.append(popup)
     popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopupSimples)
     popup.getElementsByClassName('submit')[0].addEventListener('click', quantidadeDesejada)
+    popup.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', attvalorunico)
 
 
     addItemToCart(title, price, imageSrc)
 
+}
+function attvalorunico(event) {
+    var input = event.target;
+    var shopitem = input.parentElement.parentElement;
+    var precofixoelement = shopitem.getElementsByClassName('valorfixo')[0]
+    var precofixo = parseFloat(precofixoelement.innerText.replace('R$', ''))
+    var quantidade = shopitem.getElementsByClassName('cart-quantity-input')[0].value;
+    var total = 0
+    total = total + (precofixo * quantidade)
+    total = Math.round(total * 100) / 100
+    if(total<0){
+        shopitem.getElementsByClassName('precounico')[0].innerText = 'R$' +'00.00'
+    }else{
+        shopitem.getElementsByClassName('precounico')[0].innerText = 'R$' + total
+    }
+   
 }
 function quantidadeDesejada(event) {
     var button = event.target
@@ -280,25 +297,26 @@ function quantidadeDesejada(event) {
     var tituloAtual = event.target.id;
     var quantidade = shopItem.getElementsByClassName('cart-quantity-input')[0].value;
 
-    
     var shopcart = document.getElementsByClassName('cart-items')[0];
     var cartitemTitle = shopcart.getElementsByClassName('cart-item-title')
     for (var i = 0; i < cartitemTitle.length; i++) {
         if (cartitemTitle[i].innerText == tituloAtual) {
             var shopdoValor = cartitemTitle[i].innerText;
-         
-            var input = document.getElementsByClassName('cart-quantity-input '+tituloAtual)[0];
+
+            var input = document.getElementsByClassName('cart-quantity-input ' + tituloAtual)[0];
             if (isNaN(quantidade) || quantidade <= 0) {
                 input.value = 1
                 updateCartTotal()
-            }else{
+            } else {
                 input.value = quantidade;
                 updateCartTotal()
             }
-          shopItem.remove()
+            shopItem.remove()
+
+
         }
     }
-   
+
 }
 
 function addItemToCart(title, price, imageSrc) {

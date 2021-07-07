@@ -170,7 +170,7 @@ function alteraValor(event) {
         name: finalValor,
         id: valorID
     });
-    setTimeout(function () { document.location.reload(true);; }, 2000);
+    setTimeout(function () { document.location.reload(true);; }, 4000);
     var buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()
     var lin = document.createElement('div')

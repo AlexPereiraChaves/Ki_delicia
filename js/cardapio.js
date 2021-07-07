@@ -19,7 +19,7 @@ function abreLogin() {
     <div>
     <input id="login" type="text" placeholder="insira o e-mail">
     <input id="senha" type="text" placeholder="insira a senha">
-    <button id="submit" class="submit" >Confirmar</button>
+    <button id="submit" class="submit paracolocar" >Confirmar</button>
     </div>
     </div>`
     popup.innerHTML = newpopup

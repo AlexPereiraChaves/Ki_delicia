@@ -505,3 +505,5 @@ function setImg() {
     return slider_img.setAttribute('src', "img/galeria/" + images[i]);
 
 }
+
+

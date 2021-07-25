@@ -207,17 +207,18 @@ function gerapopup(event) {
     <div class="modal um" id="modal">
 <div class="modal-header">
 <div class="title">${title}</div>
-<button data-close-button class="close-button">Fechar janela &times;</button>
+
 </div>
 <div class="modal-body 1">
-<h4>${price}</h4>
+<p class="letrasdescricao">${price}</p>
 <img class="modalimg" src="${imageSrc}">
+<button data-close-button class="close-button fechardescricao">Continuar vendo! </button>
 </div>
 </div>
-<div id="overlay"></div>`
+`
     popup.innerHTML = newpopup
     cartItems.append(popup)
-    popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+    popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopupsemoverlay)
 }
 function gerapopupbyimg(event) {
     var button = event.target
@@ -234,17 +235,18 @@ function gerapopupbyimg(event) {
     <div class="modal um" id="modal">
 <div class="modal-header">
 <div class="title">${title}</div>
-<button data-close-button class="close-button">Fechar janela &times;</button>
+
 </div>
 <div class="modal-body 1">
-<h4>${price}</h4>
+<p class="letrasdescricao">${price}</p>
 <img class="modalimg" src="${imageSrc}">
+<button data-close-button class="close-button fechardescricao">Continuar vendo! </button>
 </div>
 </div>
-<div id="overlay"></div>`
+`
     popup.innerHTML = newpopup
     cartItems.append(popup)
-    popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+    popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopupsemoverlay)
 }
 //((((((((((((((((((((((((((((((((((((((((((((((((((((((()))))))))))))))))))))))))))))))))))))))))))))))))))))))
 function addToCartClicked(event) {
@@ -262,9 +264,9 @@ function addToCartClicked(event) {
     var newpopup = `<div class='modal'>
   <button data-close-button class="close-button">Fechar janela &times;</button>
   <p class='textoquantidade'>${title}</p><img class="cart-item-image inputdocartantes" src='${imageSrc}'/> 
-  <p class='textoquantidade'>Escolha a quantidade(aperte no quadrado abaixo):</p>
+  <p class='textoquantidade'>Escolha a quantidade</p><p class='indicaquadrado'>(aperte no quadrado abaixo):</p>
   <input class="cart-quantity-input  inputdocartantes" id="${price}" type="number" value="1">
-  <p class='textoquantidade'>Valor por unidade:<span class='valorfixo'>${price}</span> Total: </p> <span class="precounico precovalorunico">${price}</span>
+  <p class='textoquantidade'>Valor por unidade:<span class='valorfixo'>${price}</span> <br>Total: </p> <span class="precounico precovalorunico">${price}</span>
   <br><button id='${title}' class='submit paracolocar'>Colocar quantidade no carrinho</button>
   </div>`
     popup.innerHTML = newpopup
@@ -400,7 +402,7 @@ function abrePopupPurchase(cartItems) {
 }
 function getInputValue() {
     var cartItemContainer = document.getElementsByClassName('cart-items')[0]
-    console.log(cartItemContainer);
+    
     var cartRows = cartItemContainer.getElementsByClassName('cart-row')
     var Array = [];
     for (var i = 0; i < cartRows.length; i++) {
@@ -418,7 +420,6 @@ function getInputValue() {
     var precoTotal = document.getElementsByClassName('cart-total-price')[0];
     var total = precoTotal.innerText;
 
-
     var popup = document.createElement('div')
     popup.classList.add('pop_up_title')
     var cartItems = document.getElementsByClassName('popups')[0]
@@ -426,14 +427,14 @@ function getInputValue() {
     var numero = document.getElementById("numCasa").value;
     var htmldisplay = ` <div class="modal um" id="modal">
     <div class="modal-header">
-        <div class="title">Café artesanal</div>
+        <div class="title">Envie-nos o seu pedido!</div>
         <button data-close-button class="close-button">Cancelar: &times;</button>
     </div>
     <div class="modal-body 1">
     <h4>   </h4>
      <a class="linkWhats" href="https://wa.me/554991119174?text=Endeço:%20${end}%20Número da residência:%20${numero}%20 Total:${total}%20Pedido:%20${Array}">Envie seu pedido!</a>
     </div>
-    <h4 class="linkexplica">Clicando acima, você vai enviar o pedido completo para o whats da Ki-delícia!</>
+    <h4 class="linkexplica">Clicando acima, você vai enviar o pedido completo para o whats da Ki-delícia! E só paga quando o pedido chegar na sua casa!</>
     </div><div id="overlay"></div>`
 
     popup.innerHTML = htmldisplay
@@ -480,6 +481,11 @@ function removepopup(event) {
     var buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()
     document.getElementById('overlay').parentElement.remove()
+}
+function removepopupsemoverlay(event) {
+    var buttonClicked = event.target
+    buttonClicked.parentElement.parentElement.remove()
+   
 }
 function removepopupSimples(event) {
     var buttonClicked = event.target

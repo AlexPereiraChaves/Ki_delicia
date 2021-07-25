@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+
 .interface ul{
     display: flex;
     margin-bottom: 10px;
@@ -632,7 +634,7 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: bold;
 }
 .inputdocartantes{
-    margin-left: 30%;
+    margin-left: 42%;
    
 }
 .precounico{
@@ -640,7 +642,8 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .paracolocar{
     margin: 15px;
-    margin-left: 20%;
+    margin-left: 9%;
+    margin-right: 8%;
     background-color: rgba(255, 255, 255, 0.562);
     color: #000000;
     text-align: center;
@@ -651,13 +654,39 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .precovalorunico{
     margin-left: 40%;
-    font-size: 17px;
+    font-size: 22px;
     border-bottom: 1px solid black;
+    font-family: 'Hammersmith One', sans-serif;
 }
 .textoquantidade{
     font-size: 17px;
     color: #000000;
+    font-family: 'Hammersmith One', sans-serif;
 }
 .letrasnormais{
     color: #000000;
+}
+.indicaquadrado{
+    font-size: 17px;
+    color: #000000ab;
+}
+.linkexplica{
+    font-size: 17px;
+    
+}
+.letrasdescricao{
+    font-size: 20px;
+    color: #000000e8;
+    margin-left: -65%;
+}
+.fechardescricao{
+    margin: 35px;
+    background-color: rgb(68, 180, 34);
+    color: #def8e2;
+    text-align: center;
+    padding: 6px 10px;
+    font-size: 24px;
+    text-decoration: none;     
+    top: 50%;
+    left: 50%;
 }

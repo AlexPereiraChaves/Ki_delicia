@@ -147,6 +147,7 @@ p{
 .indenta{
   background-color: rgba(0, 0, 0, 0.288);
   border-radius: 3mm;
-  width: 300px;
+  width: 800px;
+  margin: auto;
   height: auto;
 }

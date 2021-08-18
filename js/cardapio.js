@@ -386,7 +386,7 @@ function abrePopupPurchase(cartItems) {
         total = total + (price * quantity)
     }
     total = Math.round(total * 100) / 100
-    if (total >= 10) {
+    if (total >= 5) {
         var htmldisplay = `
     <div class="modal um" id="modal">
     <div class="modal-header">
@@ -421,7 +421,7 @@ function abrePopupPurchase(cartItems) {
             <button data-close-button class="close-button">Fechar janela &times;</button>
         </div>
         <div class="modal-body 1">
-        <h4>Sua compra não excede o valor de 10 reais para aceitarmos </h4>
+        <h4>Sua compra não excede o valor de 5 reais para aceitarmos </h4>
        
         <img class="modalimg" src="">
         <button data-close-button class="close-button fechardescricao">Continuar vendo! </button>

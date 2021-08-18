@@ -141,7 +141,7 @@ function carregaParaMudar() {
 
 function mudaTitulo(event) {
     var elemento = event.target.id;
-    
+
     if (chave != null) {
         var popup = document.createElement('div')
         popup.classList.add('pop_up_title')
@@ -288,12 +288,12 @@ function attvalorunico(event) {
     var total = 0
     total = total + (precofixo * quantidade)
     total = Math.round(total * 100) / 100
-    if(total<0){
-        shopitem.getElementsByClassName('precounico')[0].innerText = 'R$' +'00.00'
-    }else{
+    if (total < 0) {
+        shopitem.getElementsByClassName('precounico')[0].innerText = 'R$' + '00.00'
+    } else {
         shopitem.getElementsByClassName('precounico')[0].innerText = 'R$' + total
     }
-   
+
 }
 function quantidadeDesejada(event) {
     var button = event.target
@@ -374,14 +374,28 @@ function abrePopupPurchase(cartItems) {
     var popup = document.createElement('div')
     popup.classList.add('pop_up_title')
     var cartItems = document.getElementsByClassName('popups')[0]
-
-    var htmldisplay = `
+    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+    var total = 0
+    for (var i = 0; i < cartRows.length; i++) {
+        var cartRow = cartRows[i]
+        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+        var price = parseFloat(priceElement.innerText.replace('R$', ''))
+        var quantity = quantityElement.value
+        total = total + (price * quantity)
+    }
+    total = Math.round(total * 100) / 100
+    if (total >= 10) {
+        var htmldisplay = `
     <div class="modal um" id="modal">
     <div class="modal-header">
         <div class="title">Falta pouco para finalizar o pedido!</div>
         <button data-close-button class="close-button">Fechar janela &times;</button>
     </div>
     <div class="modal-body 1">
+    <h4>clique nessa caixa caso queira retirar na loja a compra</h4>
+    <input type="checkbox" id="scales" name="scales"> <label for="scales">Retirada na loja(clique aqui)</label>
     <h4>Informe o endereço de entrega:(entregamos só na cidade de Correia Pinto)</h4>
     <input type="text"  id="endereco" size="20" maxlength="50"
     placeholder="Clique aqui para digitar o endereço completo" required="required" />
@@ -395,14 +409,35 @@ function abrePopupPurchase(cartItems) {
     </div>
     <div id="overlay"></div>
     `
-    popup.innerHTML = htmldisplay
-    cartItems.append(popup)
-    popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
-    popup.getElementsByClassName('close-button')[1].addEventListener('click', removepopup)
+        popup.innerHTML = htmldisplay
+        cartItems.append(popup)
+        popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+        popup.getElementsByClassName('close-button')[1].addEventListener('click', removepopup)
+    } else {
+        var htmldisplay = `
+        <div class="modal um" id="modal">
+        <div class="modal-header">
+            <div class="title">Opa!</div>
+            <button data-close-button class="close-button">Fechar janela &times;</button>
+        </div>
+        <div class="modal-body 1">
+        <h4>Sua compra não excede o valor de 10 reais para aceitarmos </h4>
+       
+        <img class="modalimg" src="">
+        <button data-close-button class="close-button fechardescricao">Continuar vendo! </button>
+        </div>
+        </div>
+        <div id="overlay"></div>
+        `
+        popup.innerHTML = htmldisplay
+        cartItems.append(popup)
+        popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+        popup.getElementsByClassName('close-button')[1].addEventListener('click', removepopup)
+    }
 }
 function getInputValue() {
     var cartItemContainer = document.getElementsByClassName('cart-items')[0]
-    
+
     var cartRows = cartItemContainer.getElementsByClassName('cart-row')
     var Array = [];
     for (var i = 0; i < cartRows.length; i++) {
@@ -419,27 +454,44 @@ function getInputValue() {
     }
     var precoTotal = document.getElementsByClassName('cart-total-price')[0];
     var total = precoTotal.innerText;
-
     var popup = document.createElement('div')
     popup.classList.add('pop_up_title')
     var cartItems = document.getElementsByClassName('popups')[0]
     var end = document.getElementById("endereco").value;
     var numero = document.getElementById("numCasa").value;
-    var htmldisplay = ` <div class="modal um" id="modal">
+    if (document.getElementById("scales").checked) {
+        var htmldisplay = ` <div class="modal um" id="modal">
     <div class="modal-header">
         <div class="title">Envie-nos o seu pedido!</div>
         <button data-close-button class="close-button">Cancelar: &times;</button>
     </div>
     <div class="modal-body 1">
-    <h4>   </h4>
-     <a class="linkWhats" href="https://wa.me/554991119174?text=Endeço:%20${end}%20Número da residência:%20${numero}%20 Total:${total}%20Pedido:%20${Array}">Envie seu pedido!</a>
+    <h4>Total: R$: ${total} </h4>
+     <a class="linkWhats" href="https://wa.me/554991119174?text=Endeço:%20${end}%20Número da residência:%20${numero}%20 %20RETIRADA%20NA%20LOJA%20 Total:${total}%20Pedido:%20${Array}">Envie seu pedido!</a>
     </div>
     <h4 class="linkexplica">Clicando acima, você vai enviar o pedido completo para o whats da Ki-delícia! E só paga quando o pedido chegar na sua casa!</>
     </div><div id="overlay"></div>`
 
-    popup.innerHTML = htmldisplay
-    cartItems.append(popup)
-    popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+        popup.innerHTML = htmldisplay
+        cartItems.append(popup)
+        popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+    } else {
+        var htmldisplay = ` <div class="modal um" id="modal">
+        <div class="modal-header">
+            <div class="title">Envie-nos o seu pedido!</div>
+            <button data-close-button class="close-button">Cancelar: &times;</button>
+        </div>
+        <div class="modal-body 1">
+        <h4>Total: R$: ${total} + Cinco reais de taxa de entrega</h4>
+         <a class="linkWhats" href="https://wa.me/554991119174?text=Endeço:%20${end}%20Número da residência:%20${numero}%20 %20TAXA%20DE%20ENTREGA%20CINCO%20REAIS%20  Total:${total}%20Pedido:%20${Array}">Envie seu pedido!</a>
+        </div>
+        <h4 class="linkexplica">Clicando acima, você vai enviar o pedido completo para o whats da Ki-delícia! E só paga quando o pedido chegar na sua casa!</>
+        </div><div id="overlay"></div>`
+
+        popup.innerHTML = htmldisplay
+        cartItems.append(popup)
+        popup.getElementsByClassName('close-button')[0].addEventListener('click', removepopup)
+    }
 
 }
 function abrePopup(classe) {
@@ -485,7 +537,7 @@ function removepopup(event) {
 function removepopupsemoverlay(event) {
     var buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()
-   
+
 }
 function removepopupSimples(event) {
     var buttonClicked = event.target

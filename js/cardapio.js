@@ -450,8 +450,9 @@ function getInputValue() {
         var price = priceElement.innerText;
         var quantity = quantityElement.value;
 
-        Array.push(nome, "Quantidade: ", quantity, "Preço: ", price);
+        Array.push("_____",nome, "QUANTIDADE: ", quantity, "PREÇO: ", price,"______");
     }
+    
     var precoTotal = document.getElementsByClassName('cart-total-price')[0];
     var total = precoTotal.innerText;
     var popup = document.createElement('div')
@@ -467,7 +468,7 @@ function getInputValue() {
     </div>
     <div class="modal-body 1">
     <h4>Total: R$: ${total} </h4>
-     <a class="linkWhats" href="https://wa.me/554991119174?text=Endeço:%20${end}%20Número da residência:%20${numero}%20 %20RETIRADA%20NA%20LOJA%20 Total:${total}%20Pedido:%20${Array}">Envie seu pedido!</a>
+     <a class="linkWhats" href="https://wa.me/554991119174?text=Endeço:%20${end}%20Número da residência:%20${numero}%20 %20RETIRADA%20NA%20LOJA%20 TOTAL:${total}%20PEDIDO:%20${Array}">Envie seu pedido!</a>
     </div>
     <h4 class="linkexplica">Clicando acima, você vai enviar o pedido completo para o whats da Ki-delícia! E só paga quando o pedido chegar na sua casa!</>
     </div><div id="overlay"></div>`
@@ -483,7 +484,7 @@ function getInputValue() {
         </div>
         <div class="modal-body 1">
         <h4>Total: R$: ${total} + Cinco reais de taxa de entrega</h4>
-         <a class="linkWhats" href="https://wa.me/554991119174?text=Endeço:%20${end}%20Número da residência:%20${numero}%20 %20TAXA%20DE%20ENTREGA%20CINCO%20REAIS%20  Total:${total}%20Pedido:%20${Array}">Envie seu pedido!</a>
+         <a class="linkWhats" href="https://wa.me/554991119174?text=Endeço:%20${end}%20Número da residência:%20${numero}%20 %20TAXA%20DE%20ENTREGA%20CINCO%20REAIS%20  TOTAL:${total}%20PEDIDO:%20${Array}">Envie seu pedido!</a>
         </div>
         <h4 class="linkexplica">Clicando acima, você vai enviar o pedido completo para o whats da Ki-delícia! E só paga quando o pedido chegar na sua casa!</>
         </div><div id="overlay"></div>`
